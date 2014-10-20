@@ -1,202 +1,237 @@
 <?php
 
 /**
- * Implements template_preprocess_html().
- *
- */
-//function foundation_librarydams_preprocess_html(&$variables) {
-//  // Add conditional CSS for IE. To use uncomment below and add IE css file
-//  drupal_add_css(path_to_theme() . '/css/ie.css', array('weight' => CSS_THEME, 'browsers' => array('!IE' => FALSE), 'preprocess' => FALSE));
-//
-//  // Need legacy support for IE downgrade to Foundation 2 or use JS file below
-//  // drupal_add_js('http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js', 'external');
-//}
-
-/**
- * Implements template_preprocess_page
- *
- */
-//function foundation_librarydams_preprocess_page(&$variables) {
-//}
-
-/**
- * Implements template_preprocess_node
- *
- */
-//function foundation_librarydams_preprocess_node(&$variables) {
-//}
-
-/**
  * Implements hook_preprocess_block()
  */
-//function foundation_librarydams_preprocess_block(&$variables) {
-//  // Add wrapping div with global class to all block content sections.
-//  $variables['content_attributes_array']['class'][] = 'block-content';
-//
-//  // Convenience variable for classes based on block ID
-//  $block_id = $variables['block']->module . '-' . $variables['block']->delta;
-//
-//  // Add classes based on a specific block
-//  switch ($block_id) {
-//    // System Navigation block
-//    case 'system-navigation':
-//      // Custom class for entire block
-//      $variables['classes_array'][] = 'system-nav';
-//      // Custom class for block title
-//      $variables['title_attributes_array']['class'][] = 'system-nav-title';
-//      // Wrapping div with custom class for block content
-//      $variables['content_attributes_array']['class'] = 'system-nav-content';
-//      break;
-//
-//    // User Login block
-//    case 'user-login':
-//      // Hide title
-//      $variables['title_attributes_array']['class'][] = 'element-invisible';
-//      break;
-//
-//    // Example of adding Foundation classes
-//    case 'block-foo': // Target the block ID
-//      // Set grid column or mobile classes or anything else you want.
-//      $variables['classes_array'][] = 'six columns';
-//      break;
-//  }
-//
-//  // Add template suggestions for blocks from specific modules.
-//  switch($variables['elements']['#block']->module) {
-//    case 'menu':
-//      $variables['theme_hook_suggestions'][] = 'block__nav';
-//    break;
-//  }
-//}
+function foundation_librarydams_preprocess_block(&$variables) {
+  // Convenience variable for block headers.
+  $title_class = &$variables['title_attributes_array']['class'];
 
-//function foundation_librarydams_preprocess_views_view(&$variables) {
-//}
-
-/**
- * Implements template_preprocess_panels_pane().
- *
- */
-//function foundation_librarydams_preprocess_panels_pane(&$variables) {
-//}
-
-/**
- * Implements template_preprocess_views_views_fields().
- *
- */
-//function foundation_librarydams_preprocess_views_view_fields(&$variables) {
-//}
-
-/**
- * Implements theme_form_element_label()
- * Use foundation tooltips
- */
-//function foundation_librarydams_form_element_label($variables) {
-//  if (!empty($variables['element']['#title'])) {
-//    $variables['element']['#title'] = '<span class="secondary label">' . $variables['element']['#title'] . '</span>';
-//  }
-//  if (!empty($variables['element']['#description'])) {
-//    $variables['element']['#description'] = ' <span data-tooltip="top" class="has-tip tip-top" data-width="250" title="' . $variables['element']['#description'] . '">' . t('More information?') . '</span>';
-//  }
-//  return theme_form_element_label($variables);
-//}
-
-/**
- * Implements hook_preprocess_button().
- */
-//function foundation_librarydams_preprocess_button(&$variables) {
-//  $variables['element']['#attributes']['class'][] = 'button';
-//  if (isset($variables['element']['#parents'][0]) && $variables['element']['#parents'][0] == 'submit') {
-//    $variables['element']['#attributes']['class'][] = 'secondary';
-//  }
-//}
-
-/**
- * Implements hook_form_alter()
- * Example of using foundation sexy buttons
- */
-//function foundation_librarydams_form_alter(&$form, &$form_state, $form_id) {
-//  // Sexy submit buttons
-//  if (!empty($form['actions']) && !empty($form['actions']['submit'])) {
-//    $classes = (is_array($form['actions']['submit']['#attributes']['class']))
-//      ? $form['actions']['submit']['#attributes']['class']
-//      : array();
-//    $classes = array_merge($classes, array('secondary', 'button', 'radius'));
-//    $form['actions']['submit']['#attributes']['class'] = $classes;
-//  }
-//}
+  // Unhide block titles in header region
+  if ($variables['block']->region == 'header') {
+    $title_class[] = 'eioverride';
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter()
- * Example of using foundation sexy buttons on comment form
  */
-//function foundation_librarydams_form_comment_form_alter(&$form, &$form_state) {
-  // Sexy preview buttons
-//  $classes = (is_array($form['actions']['preview']['#attributes']['class']))
-//    ? $form['actions']['preview']['#attributes']['class']
-//    : array();
-//  $classes = array_merge($classes, array('secondary', 'button', 'radius'));
-//  $form['actions']['preview']['#attributes']['class'] = $classes;
-//}
-
-
-/**
- * Implements template_preprocess_panels_pane().
- */
-// function zurb_foundation_preprocess_panels_pane(&$variables) {
-// }
-
-/**
-* Implements template_preprocess_views_views_fields().
-*/
-/* Delete me to enable
-function THEMENAME_preprocess_views_view_fields(&$variables) {
- if ($variables['view']->name == 'nodequeue_1') {
-
-   // Check if we have both an image and a summary
-   if (isset($variables['fields']['field_image'])) {
-
-     // If a combined field has been created, unset it and just show image
-     if (isset($variables['fields']['nothing'])) {
-       unset($variables['fields']['nothing']);
-     }
-
-   } elseif (isset($variables['fields']['title'])) {
-     unset ($variables['fields']['title']);
-   }
-
-   // Always unset the separate summary if set
-   if (isset($variables['fields']['field_summary'])) {
-     unset($variables['fields']['field_summary']);
-   }
- }
+function foundation_librarydams_form_islandora_solr_simple_search_form_alter(&$form, &$form_state, $form_id) {
+  $form['simple']['submit']['#attributes']['class'][] = 'postfix';
 }
 
-// */
-
 /**
- * Implements hook_css_alter().
+ * Implements hook_preprocess_theme().
  */
-//function foundation_librarydams_css_alter(&$css) {
-//  // Always remove base theme CSS.
-//  $theme_path = drupal_get_path('theme', 'zurb_foundation');
-//
-//  foreach($css as $path => $values) {
-//    if(strpos($path, $theme_path) === 0) {
-//      unset($css[$path]);
-//    }
-//  }
-//}
+function foundation_librarydams_preprocess_islandora_mods_display_display(&$variables) {
+  // You can use preprocess hooks to modify the variables before they are passed
+  // to the theme function or template file.
+  $object = $variables['islandora_object'];
+  _foundation_librarydams_process_mods_data($variables, $object);
+}
 
-/**
- * Implements hook_js_alter().
- */
-//function foundation_librarydams_js_alter(&$js) {
-//  // Always remove base theme JS.
-//  $theme_path = drupal_get_path('theme', 'zurb_foundation');
-//
-//  foreach($js as $path => $values) {
-//    if(strpos($path, $theme_path) === 0) {
-//      unset($js[$path]);
-//    }
-//  }
-//}
+// TODO: Generalize and add to Islandora MODS Display module.
+function _foundation_librarydams_process_mods_data(&$variables, $object) {
+  if (islandora_datastream_access(ISLANDORA_VIEW_OBJECTS, $object['MODS'])) {
+    try {
+      $mods = $object['MODS']->content;
+    }
+    catch (Exception $e) {
+      drupal_set_message(t('Error retrieving object %s %t', array('%s' => $object->id, '%t' => $e->getMessage())), 'error', FALSE);
+    }
+  }
+
+  if ($mods) {
+    $mods_data = new SimpleXMLElement($mods);
+dpm($mods_data);
+    // NAME (title)
+    if (!empty($mods_data->titleInfo->title)) {
+      $title = $mods_data->titleInfo->title;
+      drupal_set_title($title);
+    }
+
+    // CREATOR (name)
+    // AUTHOR (name)
+    // CONTRIBUTOR (name)
+    // would be nice to write code that looks at the roleTerm and then
+    // groups and labels names by different roles
+    if (!empty($mods_data->name)) {
+      $names = array();
+      foreach ($mods_data->name as $name) {
+        if (!empty($name->namePart)) {
+          $namePart = $name->namePart;
+          $namePart_link = l(
+            $namePart,
+            'islandora/search',
+            array(
+              'query' => array(
+                'f[0]' => 'mods_name_namePart_ms:' . "\"$namePart\""
+              )
+            )
+          );
+          $names[] = $namePart_link;
+        }
+      }
+      $variables['names'] = $names;
+    }
+
+    // RESOURCEID
+    $resourceid = $mods_data->identifier;
+    $variables['resourceid'] = $resourceid;
+
+    // SUBJECT
+    if (!empty($mods_data->subject->topic)) {
+      $subjects = array();
+      foreach ($mods_data->subject as $subject) {
+        $topic = $subject->topic;
+        $subject_link = l(
+          $topic,
+          'islandora/search',
+          array(
+            'query' => array(
+              'f[0]' => 'mods_subject_topic_ms:' . "\"$topic\""
+            )
+          )
+        );
+        $subjects[] = $subject_link;
+      }
+      $variables['subjects'] = $subjects;
+    }
+
+    // LANGUAGE
+
+    // DESCRIPTION (abstract)
+    if (!empty($mods_data->abstract)) {
+      $abstract = $mods_data->abstract;
+      $variables['abstract'] = $abstract;
+    }
+
+    // PUBLISHER
+    if (!empty($mods_data->originInfo->publisher)) {
+      $publishers = array();
+      foreach ($mods_data->originInfo->publisher as $publisher) {
+        $publisher_link = l(
+          $publisher,
+          'islandora/search',
+          array(
+            'query' => array(
+              'f[0]' => 'mods_originInfo_publisher_ms:' . "\"$publisher\""
+            )
+          )
+        );
+        $publishers[] = $publisher_link;
+      }
+      $variables['publishers'] = $publishers;
+    }
+
+    // DATE
+    if (!empty($mods_data->originInfo->dateIssued)) {
+      $date = $mods_data->originInfo->dateIssued;
+      $variables['date'] = $date;
+    }
+
+    // FORMAT
+    if (!empty($mods_data->physicalDescription->extent)) {
+      $format = $mods_data->physicalDescription->extent;
+      $variables['format'] = $format;
+    }
+
+    // DEPARTMENT
+    if (!empty($mods_data->location->physicalLocation)) {
+      $department = $mods_data->location->physicalLocation;
+      $variables['department'] = $department;
+      $variables['department_link'] = l(
+        $department,
+        'islandora/search',
+        array(
+          'query' => array(
+            'f[0]' => 'mods_location_physicalLocation_ms:' . "\"$department\""
+          )
+        )
+      );
+    }
+
+    // SOURCE
+    $source_publisher = $mods_data->originInfo->publisher;
+    // may have to parse dates differently between XSL and SimpleXML
+    // if the DATE field exists and a SOURCE field date exists they
+    // must be the same
+    $source_date = $mods_data->originInfo->dateIssued;
+
+    // COLLECTION
+    if (!empty($mods_data->relatedItem->titleInfo->title)) {
+      $collections = array();
+      foreach ($mods_data->relatedItem as $collection) {
+        $collection_title = $collection->titleInfo->title;
+        $collection_link = l(
+          $collection_title,
+          'islandora/search',
+          array(
+            'query' => array(
+              'f[0]' => 'mods_relatedItem_host_titleInfo_title_ms:' . "\"$collection_title\""
+            )
+          )
+        );
+        $collections[] =  $collection_link;
+      }
+      $variables['collections'] = $collections;
+    }
+
+    // LOCATION
+    if (!empty($mods_data->location->shelfLocator)) {
+      $variables['location'] = $mods_data->location->shelfLocator;
+    }
+
+    // check for notes
+    $negatives = array();
+    $content_notes = array();
+    foreach ($mods_data->note as $note) {
+      // NEGATIVE NUMBERS
+      if ((string) $note['type'] == 'negative number') {
+        // cast note as string because it is an object
+        $note = (string) $note;
+        if (!empty($note)) {
+          $negatives[] = $note;
+        }
+      }
+      // SOURCE
+      elseif ((string) $note['type'] == 'source') {
+        // cast note as string because it is an object
+        $note = (string) $note;
+        if (!empty($note)) {
+          $variables['source'] = $note;
+        }
+      }
+      // RELATION
+      elseif ((string) $note['type'] == 'content') {
+        // cast note as string because it is an object
+        $note = (string) $note;
+        if (!empty($note)) {
+          $content_notes[] = $note;
+        }
+      }
+    }
+    $variables['negatives'] = $negatives;
+    $variables['content_notes'] = $content_notes;
+
+    foreach ($mods_data->accessCondition as $accessCondition) {
+      // RESTRICTIONS
+      if ((string) $accessCondition['type'] == 'restriction on access') {
+        // cast accessCondition as string because it is an object
+        $accessCondition = (string) $accessCondition;
+        if (!empty($accessCondition)) {
+          $variables['restrictions'] = $accessCondition;
+        }
+      }
+      // COPYRIGHT
+      elseif ((string) $accessCondition['type'] == 'use and reproduction') {
+        // cast accessCondition as string because it is an object
+        $accessCondition = (string) $accessCondition;
+        if (!empty($accessCondition)) {
+          $variables['copyright'] = $accessCondition;
+        }
+      }
+    }
+
+  }
+}

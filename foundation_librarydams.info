@@ -79,6 +79,8 @@ scripts[] = js/foundation.min.js
 ; You'll use this variable in page.tpl.php:
 ;   <?php print render($page['header']); ?>
 
+regions[accountlinks]        = Account Links
+regions[citylinks]           = City Links
 regions[header]              = Header
 regions[help]                = Help
 regions[highlighted]         = Highlighted

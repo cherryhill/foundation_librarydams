@@ -2,6 +2,10 @@
 
 .l-header {}
 
+#branding-search {
+  position: relative; /* allows search block to have absolute position */
+}
+
 // Top Bar
 //--------------------------------------------------
 .top-bar {

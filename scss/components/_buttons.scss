@@ -3,4 +3,12 @@
 // Before adding styles be sure to modify variables in the
 // "scss/_variables.scss" file.
 
-.button {}
+button, .button {
+  background-color: $color_button_background;
+  border: none;
+  border-radius: 2px;
+  box-shadow: none;
+  &:hover {
+    background-color: $color_button_background;
+  }
+}

@@ -6542,13 +6542,13 @@ blockquote:after {
 }
 
 .aside {
-  background-color: #2259ab;
+  background-color: #f1f1f1;
+  border: 1px solid #aecbf3;
   padding: 1em 1.25em;
   width: 40%;
   float: right;
   margin: 0 0 1em 1em;
-  color: white;
-  font-size: 1em;
+  font-size: 1.1em;
   font-family: "Arvo", "Georgia", georgia, serif;
   font-style: italic;
 }

@@ -243,13 +243,13 @@ li {
   padding:0.5em 1em;
 }
 .aside {
-  background-color: $color_c1;
+  background-color: $color-background-light;
+  border: 1px solid $color_border_light;
   padding:1em 1.25em;
   width: 40%;
   float: right;
   margin: 0 0 1em 1em;
-  color:white;
-  font-size:1em;
+  font-size: 1.1em;
   font-family: $header-font-family;
   font-style: italic;
   @media screen and (max-width: $topbar-breakpoint) {

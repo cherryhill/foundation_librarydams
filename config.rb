@@ -1,3 +1,11 @@
+# Default to development if environment is not set.
+saved = environment
+if (environment.nil?)
+  environment = :development
+else
+  environment = saved
+end
+
 # Requre a specific version in this file:
 # gem 'zurb-foundation', '=4.3.2'
 require 'zurb-foundation'
@@ -19,9 +27,15 @@ output_style = :expanded
 # relative_assets = true
 
 # To disable debugging comments that display the original location of your selectors. Uncomment:
-# line_comments = false
-line_comments = true
+line_comments = false
+# line_comments = (environment == :production) ? false : true
 
+# sass_options = (environment == :production) ? {} : {:debug_info => true}
+# sass_options = {:debug_info => true}
+# sass_options = {:sourcemap => true}
+sourcemap = (environment == :production) ? false : true
+
+disable_warnings = true
 
 # If you prefer the indented syntax, you might want to regenerate this
 # project again passing --syntax sass, or you can uncomment this:

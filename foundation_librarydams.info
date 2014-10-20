@@ -27,9 +27,9 @@ base theme = zurb_foundation
 ; CSS3 media queries: http://www.w3.org/TR/css3-mediaqueries/
 
 ; For CSS users, load the app.css file:
-stylesheets[all][] = css/app.css
+;stylesheets[all][] = css/app.css
 ; Comment the app.css file (above) if you're using sass to preprocess css:
-;stylesheets[all][] = css/foundation_librarydams.css
+stylesheets[all][] = css/foundation_librarydams.css
 
 ; Block loading of foundation.min.css from the base theme. This file should either
 ; not exist or be blank in your subtheme. See https://drupal.org/node/263967
@@ -112,7 +112,7 @@ regions[footer]              = Footer
 ; features[] = secondary_menu
 
 ; Panel Layouts
-plugins[panels][layouts] = layouts
+;plugins[panels][layouts] = layouts
 
 ; Theme settings:
 

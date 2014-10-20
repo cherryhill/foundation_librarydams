@@ -1,0 +1,878 @@
+/* @file
+ * This file is a custom file that loads all files. Each non-base layer
+ * can be disabled.
+ *
+ * Do not name this file, "app.scss". If you run a compass update this file can
+ * be wiped out with a compass update. By default, when a compass project is
+ * created the file will be named app.scss. Thus this file is named,
+ * THEMENAME.scss.
+ *
+ * This application file (THEMENAME.scss) is where all the partials are
+ * imported.
+ *
+ * Theme styles are categorized using SMACSS standards. They utilize
+ * categorization of styles into various categories. Those categories are the
+ * following:
+ *
+ * - Base: CSS reset/normalize plus HTML element styling.
+ * - Layout: Macro arrangement of a web page, including any grid systems.
+ * - Component: Dictate minor layout modules or reusable elements.
+ * - State: Describe the appearance of a module in various states.
+ * - Theme: Purely visual optional styling ("look-and-feel") for a component.
+ *
+ * For more information about this new Drupal css file standard, please review
+ * the following:
+ * - https://drupal.org/node/1887922
+ * - http://smacss.com/
+ */
+
+// Base
+//
+// Init file contains required imports. Here's where we include normalize,
+// foundation and also compass.
+@import "base/init";
+// Import our mixins early so they can be used by other partials.
+@import "base/mixins";
+//
+// Common file is where you place common utility classes to extend or
+// parametrics. Optional file.
+@import "base/common";
+//
+// Fix for some Drupal CSS quirks (Drupalisms).
+@import "base/drupal";
+//
+// Styling for elements.
+@import "base/elements";
+//
+
+// Layout
+//
+// Each section of the document has it's own partial seperated out to improve
+// developer experience. Additionally, grids can be declared in layouts as well.
+@import "layout/header";
+@import "layout/main";
+@import "layout/aside";
+@import "layout/triptych";
+@import "layout/footer";
+
+// Components
+@import "components/buttons";
+// @import "components/type";
+// @import "components/forms";
+// @import "components/foundation-icons";
+@import "components/search";
+
+// Themes
+// @import "theme/button-light";
+
+// IE8 Grid Support
+//@import "ie";
+
+/* -----------------------------------------
+   Shared Styles
+   ----------------------------------------- */
+
+.contain-to-grid {
+  background-color: $color-background-dark;
+  &.footcols {
+    background-color: $color-background-light;
+    border-top: 1px solid $color_c3;
+    margin-top:2em;
+    @media screen and (max-width: $small-screen) {
+      margin-top: 0.5em;
+    }
+  }
+}
+
+a,
+a:link,
+a:visited {
+  color: $color_c1;
+  &[href^="tel:"] {
+    color: $color-text-dark;
+    @media screen and (max-width: $small-screen) {
+      width: auto;
+      padding: 0.25em 0.5em;
+      text-transform: uppercase;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+      transition: background-color 300ms ease-out 0s;
+      background-color: $color_c1;
+      border: 1px solid ($color_c1 - #222);
+      cursor: pointer;
+      color: $color-link-lightest;
+      font-weight: normal;
+    }
+  }
+  &.permalink {
+    display: none;
+  }
+}
+a:hover,
+a:focus {
+  color: $color-link-lightest;
+  background-color: $color_c2;
+  &[href^="tel:"] {
+    background-color: none;
+    color: $color-text-dark;
+    @media screen and (max-width: $small-screen) {
+      background-color: $color_c2;
+      color: $color-link-lightest;
+    }
+  }
+  .contextual-links-wrapper & {
+    background-color: transparent;
+  }
+}
+
+h1 {
+  &#page-title {
+    margin-top:0;
+  }
+}
+
+h2 {
+  color: $color_c2;
+  border-bottom: 1px solid $color_c3;
+  font-size: 1.4em;
+  header &{
+    color: $color-text-dark;
+    border-bottom: 0;
+    &.block-title {
+      text-transform: uppercase;
+      font-size: 0.9em;
+      margin: 5px 0 0 0.75em;
+      text-shadow: 1px 1px $color-text-shadow-lightest;
+      @media screen and (max-width: $smallmedium-screen) {
+        font-size: 0.7em;
+      }
+      &:after {
+        content: ":";
+      }
+    }
+  }
+  .block-menu-block-1 &{
+    &.block-title {
+      border-top: 3px solid $color_c1;
+      padding: 0.5em 0 0.1em 0.5em;
+      margin-bottom:0;
+      a,
+      a:link,
+      a:visited {
+        color: $color_c2;
+      }
+      a:hover,
+      a:focus {
+        color: $color_c1;
+        background-color: $color-background-lightest;
+      }
+    }
+  }
+  .l-footer-columns &{
+    &.block-title {
+      border-top: 3px solid $color_c1;
+      border-bottom: 0;
+      padding: 0.25em 0 0;
+      font-size: 1.2em;
+      margin-bottom: 0;
+    }
+  }
+  &.field-label {
+    border-bottom: 0;
+    font-size: 1em;
+    font-weight: bold;
+    font-family: $body-font-family;
+    text-transform: uppercase;
+    margin:1em 0 0 0;
+    color: $color-text-dark;
+  }
+  .section-library-search & {
+    border-bottom: 0;
+    font-family: $body-font-family;
+    color: $color-text-dark;
+    font-size: 1em;
+    text-transform: uppercase;
+  }
+}
+
+h3 {
+  color: $color_c2;
+  text-transform: uppercase;
+  font-size: 1.2em;
+}
+
+h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $body-font-family;
+  font-size: 1em;
+}
+
+blockquote {
+  border-left: 0;
+  font-style: italic;
+  padding: 0 3em;
+  &:before,
+  &:after {
+    content:"\201C";
+    font-family: $header-font-family;
+    font-size:4em;
+    color: $color_c1;
+    float: left;
+    margin: -10px 0 0 -40px;
+  }
+  &:after {
+    content:"\201D";
+    float: right;
+    margin: -70px -20px 0 0;
+  }
+}
+
+li {
+  .view-mode-full &{
+    margin-left: 3em;
+  }
+}
+
+.special {
+  font-family: $header-font-family;
+  font-size: 1.1em;
+}
+.notice {
+  background-color: $color-background-notice;
+  font-style: italic;
+  padding:0.5em 1em;
+}
+.aside {
+  background-color: $color_c1;
+  padding:1em 1.25em;
+  width: 40%;
+  float: right;
+  margin: 0 0 1em 1em;
+  color:white;
+  font-size:1em;
+  font-family: $header-font-family;
+  font-style: italic;
+  @media screen and (max-width: $topbar-breakpoint) {
+    width: 50%;
+    font-size:0.9em;
+    padding: 0.75em 1em;
+  }
+}
+.left {
+  float:left;
+  margin:0 1em 1em 0;
+}
+.right {
+  float:right;
+  margin:0 0 1em 1em;
+}
+
+.posted,
+.postdate {
+  margin: -1em 0 1em;
+  font-size: 0.9em;
+  color: $color-text-dark + #222;
+  font-style: italic;
+}
+.postdate {
+  margin: 0;
+}
+.element-invisible.eioverride {
+  clip: auto;
+  height: auto;
+  overflow: visible;
+  position: relative !important;
+}
+
+@media screen and (min-width: $small-screen) and (max-width: $smallmedium-screen) {
+  .smallmedium-6 {
+    position: relative;
+    width: 50%;
+  }
+  .smallmedium-12 {
+    position: relative;
+    width: 100%;
+  }
+}
+
+/* HEADER AREA */
+
+header {
+  background: url(../images/bookphoto.png) no-repeat top right;
+  a:hover,
+  a:focus {
+    background: none;
+    color: $color_c1;
+  }
+  @media all and (max-width: $smallmedium-screen) {
+    background: none;
+  }
+  @media all and (max-width: $topbar-breakpoint) {
+    .large-5,
+    .large-4 {
+      display: none;
+    }
+  }
+}
+
+#topmostbranding {
+  color: $color-text-lightest;
+  min-height: 5px;
+  font-size: 0.9em;
+  padding: 3px 0.5em;
+  &.row {
+    max-width: 68em;
+  }
+  @media only screen and (max-width: 768px) {
+    font-size: 0.8em;
+  }
+  @media only screen and (max-width: #{$topbar-breakpoint}) {
+    display: none;
+  }
+}
+
+#accountlinks,
+#citylinks {
+  margin:0;
+  padding:5px 0;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    margin-bottom:auto;
+    li {
+      list-style: none;
+      list-style-image: none;
+      float: right;
+      margin-left: 1em;
+      a,
+      a:link,
+      a:visited {
+        display: block;
+        background-color: $color_c2;
+        color: $color-link-lightest;
+        padding:0 5px;
+      }
+      a:hover,
+      a:focus {
+        background-color: $color_c1;
+      }
+    }
+  }
+}
+
+// Site name and logo might need to be customized site-by-site
+#logo {
+  float:left;
+  margin: 0.75em 0.5em 0.75em 0;
+  @media only screen and (max-width: #{$topbar-breakpoint}) {
+    width: 60px;
+  }
+}
+
+#site-name {
+  margin: 2.75em 0 0 0;
+  font-size: 1.5em;
+  line-height: 1em;
+  @media only screen and (max-width: #{$topbar-breakpoint}) {
+    margin-top:0.75em;
+  }
+// Site name and logo might need to be customized site-by-site
+
+}
+#site-slogan {
+  line-height: 1em;
+  font-size: 1em;
+  margin:0.25em 0 0 0;
+  padding-left:0.25em;
+  @media only screen and (max-width: #{$topbar-breakpoint}) {
+    display: none;
+  }
+}
+
+#topbar {
+  margin-bottom:2em;
+  &.contain-to-grid {
+    background-color: white;
+    border-top:1px solid $color_c3;
+    border-bottom:1px solid $color_c3;
+    .top-bar {
+        background: $color-background-lightest;
+        margin-bottom:0;
+        &.expanded {
+          .title-area {
+            background: $color-background-lightest;
+          }
+          #main-menu {
+            li {
+              border-bottom: 1px solid $color_c3;
+              &.first {
+                border-top: 1px solid $color_c3;
+              }
+              .parent-link {
+                display:none;
+              }
+              h5 {
+                font-family: $body-font-family;
+              }
+            }
+          }
+        }
+        .search-icon {
+          display: none;
+          @media screen and (min-width: $innyminny-screen) and (max-width: $topbar-breakpoint) {
+            display: block;
+            float: right;
+            font-weight: normal;
+            color: $color-text-dark;
+            text-transform: uppercase;
+            padding-right:0.75em;
+            a,
+            a:link,
+            a:visited {
+              color: $color-text-dark;
+              display: block;
+              background: url(../images/iconsprite.png) -7px -93px no-repeat;
+              padding-left: 25px;
+              font-size: 1.25em;
+              margin-top:-38px;
+                @media screen and (max-width: $ittybitty-screen) {
+                  font-size: 0.9em;
+                  background: none;
+                  margin-top: -33px;
+                }
+            }
+          }
+        }
+        .toggle-topbar {
+          &.menu-icon {
+            right: auto;
+            left: 12px;
+            border-right: 1px solid $color_c3;
+              width: 50%;
+              padding: 10px 0 10px 40px;
+              margin-top: -26px;
+            @media screen and (max-width: $ittybitty-screen) {
+              padding-left: 30px;
+            }
+            @media screen and (max-width: $innyminny-screen) {
+              border-right: 0;
+            }
+              a,
+              a:link,
+              a:visited {
+              color: $color-text-dark;
+              font-size: 1.25em;
+              font-weight: normal;
+              text-indent: -65px;
+              width: 45px;
+                @media screen and (max-width: $ittybitty-screen) {
+                  font-size: 0.9em;
+                  text-indent: -45px;
+                  width: 35px;
+                }
+              }
+          }
+        }
+    }
+    .top-bar-section {
+      ul {
+        background: $color-background-lightest;
+        li {
+          background: $color-background-lightest;
+          a,
+          a:link,
+          a:visited
+          a:not(.button) {
+            color: $color-text-dark;
+            background: $color-background-lightest;
+            font-size: 1.25em;
+            font-weight: normal;
+            &.active {
+              color: $color_c2;
+              &:hover {
+                color: $color-link-lightest;
+              }
+            }
+          }
+          a:hover,
+          a:focus {
+            color: $color-link-lightest;
+            background: $color_c1;
+          }
+        }
+      }
+      .dropdown {
+        li {
+          border: 1px solid $color_c3;
+          border-top: 0;
+          font-size: 0.85em;
+          &.first {
+            border-top: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+//
+// SIDEBAR
+//
+
+.block-menu-block-1 {
+  margin-bottom: 2em;
+  ul {
+  font-family: $header-font-family;
+    li {
+      border-bottom: 1px solid $color_c3;
+      list-style: none;
+      list-style-image: none;
+      padding: 0.75em 0 0.5em 1em;
+      a,
+      a:link,
+      a:visited {
+        display: block;
+        color: $color-text-dark;
+        &.active {
+          color: $color_c2;
+        }
+      }
+      a:hover,
+      a:focus {
+        color: $color_c1;
+        background-color: transparent;
+      }
+      li {
+        padding: 0.35em 0.5em 0.35em 0;
+        border-bottom:0;
+        line-height: 1em;
+        font-family: $body-font-family;
+        font-size:0.9em;
+        a,
+        a:link,
+        a:visited {
+          color: $color_c1;
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  .block:not(.block-menu-block-1) {
+    border: 1px solid $color_c3;
+    padding: 0.5em 1em 0.25em;
+    font-size: 0.9em;
+    margin: 0 0 2em 0;
+    h2 {
+      &.block-title {
+        border: 0;
+        font-size: 1em;
+        font-family: $body-font-family;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: $color-text-dark;
+      }
+    }
+  }
+
+}
+
+//
+// TRYPTIC COLUMNS
+//
+
+.l-triptych {
+  h2 {
+    &.block-title {
+      border-bottom: 0;
+      @media screen and (max-width: $small-screen) {
+        border-top: 1px solid $color_c3;
+        padding-top: 0.5em;
+      }
+    }
+  }
+  li {
+    margin-left: 0;
+    list-style-position: inside;
+  }
+  .block {
+    padding: 0 2em;
+    @media screen and (min-width: $small-screen) and (max-width: $smallmedium-screen) {
+      padding: 0 1em;
+    }
+    @media screen and (max-width: $small-screen) {
+      padding: 0;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .triptych-middle {
+    border-left: 1px solid $color_c3;
+    border-right: 1px solid $color_c3;
+    @media screen and (min-width: $small-screen) and (max-width: $smallmedium-screen) {
+      border-right: 0;
+    }
+    @media screen and (max-width: $small-screen) {
+      border: 0;
+    }
+  }
+}
+
+
+
+//
+// FOOTER COLUMNS
+//
+
+.l-footer-columns {
+  padding:2.5em 0 2em;
+  @media screen and (max-width: $small-screen) {
+    padding: 1em 0;
+  }
+  ul {
+    li {
+      list-style: none;
+      list-style-image: none;
+      padding: 0.15em 0;
+    }
+  }
+}
+.l-footer {
+  background-color: $color-background-dark;
+  color: $color-text-lightest;
+  overflow: auto;
+  &.panel {
+    margin-bottom:0;
+    border: 0;
+    p {
+      color: $color-text-lightest;
+      margin-bottom: 0;
+      @media screen and (max-width: $small-screen) {
+        clear: both;
+      }
+    }
+  }
+  .block {
+    font-size: 0.85em;
+  }
+  .columns {
+    padding: 0;
+  }
+  a,
+  a:link,
+  a:visited {
+    color: $color_c3;
+  }
+  a:hover {
+    background-color: transparent;
+    color: $color-link-lightest;
+  }
+  .block-block-10 {
+    float: right;
+  }
+  .block-menu {
+    float:left;
+    li {
+      float:left;
+      list-style: none;
+      list-style-image: none;
+      padding-right: 0.5em;
+      margin-left: 0.5em;
+      border-right: 1px solid $color_c3;
+      @media screen and (max-width: $small-screen) {
+        float: none;
+        border: 0;
+        margin-left: 0;
+        padding-right: 0;
+      }
+      &.first {
+        margin-left: 0;
+        padding-left: 0;
+      }
+      &.last {
+        border-right: 0;
+      }
+    }
+  }
+  .copyright {
+    text-align:right;
+  }
+  img {
+    max-width: 30px;
+  }
+}
+
+//
+// MAIN
+//
+
+.l-main {
+  @media screen and (max-width: $small-screen) {
+    margin-top: -20px;
+  }
+}
+
+//
+// INTERNAL PAGE STYLES
+//
+
+.view-mode-full {
+  .image {
+    width: 50%;
+    float: right;
+    margin: 0 0 0 4%;
+    li &{
+      margin-left: 0;
+    }
+    @media screen and (max-width: $topbar-breakpoint) {
+      float: none;
+      width: 100%;
+      margin: 0 0 1em 0;
+    }
+    .flexslider {
+      padding: 0;
+      margin: 0;
+      border: 1px solid $color_c3;
+      box-shadow: none;
+      border-radius: 0;
+      .flex-caption {
+        margin: 0.5em;
+        padding: 0.5em 0;
+        font-style: italic;
+        text-align: center;
+        line-height: 1.1em;
+        font-size: 0.8em;
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+  /* views styling */
+.views-row {
+  line-height: 1.2em;
+  clear: both;
+  margin-bottom: 2em;
+  .block-views &{
+    margin-bottom: 1em;
+  }
+  h3 {
+    text-transform: none;
+    margin-bottom: 0;
+    a,
+    a:link,
+    a:visited {
+      color: $color_c2;
+    }
+    a:hover,
+    a:focus {
+      color: $color_c1;
+      background: none;
+    }
+  }
+  img {
+    float:right;
+    margin: 0.5em 0 0.5em 1em;
+    border: 1px solid $color_c3;
+    padding: 3px;
+  }
+}
+
+//
+// FlexSlider Slideshow Styles
+//
+
+.flexslider {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  p {
+    @media screen and (max-width: $small-screen) {
+      margin-bottom: 0.5em;
+    }
+  }
+  h2 {
+    border: 0;
+  }
+  li {
+    margin-left:0;
+  }
+  .views-field-field-image {
+    width: 70%;
+    margin-right: 4%;
+    float: left;
+    margin-bottom: 2em;
+    @media screen and (max-width: $topbar-breakpoint) {
+      float:none;
+      width:100%;
+      margin-right: 0;
+      margin-bottom:0.5em;
+    }
+  }
+  .field-name-field-page-slideshow-image &{
+    img {
+      width: 70%;
+      margin-right: 4%;
+      margin-bottom: 2em;
+      float:left;
+      @media screen and (max-width: $topbar-breakpoint) {
+        border:1px solid $color_c3;
+        width:100%;
+        margin-right:0;
+        margin-bottom:0;
+      }
+    }
+    .flex-caption {
+      margin: 1em 0;
+      font-style: italic;
+      @media screen and (max-width: $topbar-breakpoint) {
+        border:1px solid $color_c3;
+        border-top:0;
+        width:100%;
+        margin: 0.5em 0 1em 0;
+        padding: 1em 0.5em 0.5em;
+        text-align: center;
+        font-size: 0.8em;
+        line-height: 1.1em;
+      }
+    }
+  }
+  .flex-control-nav {
+    left: 74%;
+    margin-top: -15%;
+    bottom: auto;
+    position: absolute;
+    text-align: none;
+    width:auto;
+    @media screen and (max-width: $smallmedium-screen) {
+      margin-top: -8%;
+    }
+    @media screen and (max-width: $topbar-breakpoint) {
+      display: none;
+    }
+  }
+  .flex-control-paging {
+    li {
+      a {
+        background-color: $color_c3;
+        &.flex-active {
+          background-color: $color_c1;
+        }
+      }
+    }
+  }
+}
+// Update needed with FlexSlider 2.2.2 library.
+.flex-direction-nav a:before {
+  font-size: 26px;
+}

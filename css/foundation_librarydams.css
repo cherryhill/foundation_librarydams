@@ -6357,6 +6357,33 @@ button:hover, .button:hover {
   width: 27%;
 }
 
+/*
+ * Views
+ */
+.view-browse .view-content {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  margin-bottom: 2em;
+}
+.view-browse .views-row {
+  border: 1px solid #aecbf3;
+  display: inline-block;
+}
+.view-browse .views-field-datastream-image img {
+  width: 350px;
+}
+.view-browse .views-field-label {
+  border-top: 1px solid #aecbf3;
+  text-align: center;
+}
+.view-browse .views-field-label a {
+  display: inline-block;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+}
+
 /* -----------------------------------------
    Shared Styles
    ----------------------------------------- */
@@ -6809,37 +6836,28 @@ header a:focus {
     width: 35px;
   }
 }
-#topbar.contain-to-grid .top-bar-section ul {
+#topbar.contain-to-grid .top-bar-section #main-menu .first a.active {
   background: #fff;
-}
-#topbar.contain-to-grid .top-bar-section ul li {
-  background: #fff;
-}
-#topbar.contain-to-grid .top-bar-section ul li a,
-#topbar.contain-to-grid .top-bar-section ul li a:link,
-#topbar.contain-to-grid .top-bar-section ul li a:visited
-a:not(.button) {
   color: #333;
+}
+#topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus {
+  background-color: #2259ab;
+  color: #fff;
+}
+#topbar.contain-to-grid .top-bar-section a,
+#topbar.contain-to-grid .top-bar-section a:link,
+#topbar.contain-to-grid .top-bar-section a:visited
+a:not(.button) {
   background: #fff;
+  color: #333;
   font-size: 1.25em;
   font-weight: normal;
 }
-#topbar.contain-to-grid .top-bar-section ul li a.active,
-#topbar.contain-to-grid .top-bar-section ul li a:link.active,
-#topbar.contain-to-grid .top-bar-section ul li a:visited
-a:not(.button).active {
-  color: #2259ab;
-}
-#topbar.contain-to-grid .top-bar-section ul li a.active:hover,
-#topbar.contain-to-grid .top-bar-section ul li a:link.active:hover,
-#topbar.contain-to-grid .top-bar-section ul li a:visited
-a:not(.button).active:hover {
+#topbar.contain-to-grid .top-bar-section a.active,
+#topbar.contain-to-grid .top-bar-section a:hover,
+#topbar.contain-to-grid .top-bar-section a:focus {
+  background-color: #2259ab;
   color: #fff;
-}
-#topbar.contain-to-grid .top-bar-section ul li a:hover,
-#topbar.contain-to-grid .top-bar-section ul li a:focus {
-  color: #fff;
-  background: #2259ab;
 }
 #topbar.contain-to-grid .top-bar-section .dropdown li {
   border: 1px solid #aecbf3;
@@ -7073,36 +7091,6 @@ li .view-mode-full .image {
 .view-mode-full .image .flexslider .flex-caption p {
   margin: 0;
   padding: 0;
-}
-
-/* views styling */
-.views-row {
-  line-height: 1.2em;
-  clear: both;
-  margin-bottom: 2em;
-}
-.block-views .views-row {
-  margin-bottom: 1em;
-}
-.views-row h3 {
-  text-transform: none;
-  margin-bottom: 0;
-}
-.views-row h3 a,
-.views-row h3 a:link,
-.views-row h3 a:visited {
-  color: #2259ab;
-}
-.views-row h3 a:hover,
-.views-row h3 a:focus {
-  color: #2259ab;
-  background: none;
-}
-.views-row img {
-  float: right;
-  margin: 0.5em 0 0.5em 1em;
-  border: 1px solid #aecbf3;
-  padding: 3px;
 }
 
 .flexslider {

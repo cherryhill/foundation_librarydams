@@ -1,0 +1,29 @@
+/*
+ * Views
+ */
+
+.view-browse {
+  .view-content {
+    @include column-count(2);
+    margin-bottom: 2em;
+  }
+  .views-row {
+    border: 1px solid $color_border_light;
+    display: inline-block;
+  }
+  .views-field-datastream-image {
+    img {
+      width: 350px;
+    }
+  }
+  .views-field-label {
+    border-top: 1px solid $color_border_light;
+    text-align: center;
+    a {
+      display: inline-block;
+      height: 100%;
+      padding: 1em;
+      width: 100%;
+    }
+  }
+}

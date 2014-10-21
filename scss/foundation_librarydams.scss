@@ -61,6 +61,7 @@
 // @import "components/forms";
 // @import "components/foundation-icons";
 @import "components/search";
+@import "components/views";
 
 // Themes
 // @import "theme/button-light";
@@ -477,31 +478,26 @@ header {
         }
     }
     .top-bar-section {
-      ul {
-        background: $color-background-lightest;
-        li {
-          background: $color-background-lightest;
-          a,
-          a:link,
-          a:visited
-          a:not(.button) {
-            color: $color-text-dark;
-            background: $color-background-lightest;
-            font-size: 1.25em;
-            font-weight: normal;
-            &.active {
-              color: $color_c2;
-              &:hover {
-                color: $color-link-lightest;
-              }
-            }
-          }
-          a:hover,
-          a:focus {
-            color: $color-link-lightest;
-            background: $color_c1;
-          }
-        }
+      // Do not highlight the Home menu item on the home page.
+      #main-menu .first a.active {
+        @include color_link_menu_normal;
+        &:hover,
+        &:focus {
+          @include color_link_menu_hover;
+        }        
+      }
+      a,
+      a:link,
+      a:visited
+      a:not(.button) {
+        @include color_link_menu_normal;
+        font-size: 1.25em;
+        font-weight: normal;
+      }
+      a.active,
+      a:hover,
+      a:focus {
+        @include color_link_menu_hover;
       }
       .dropdown {
         li {
@@ -753,36 +749,6 @@ header {
         }
       }
     }
-  }
-}
-
-  /* views styling */
-.views-row {
-  line-height: 1.2em;
-  clear: both;
-  margin-bottom: 2em;
-  .block-views &{
-    margin-bottom: 1em;
-  }
-  h3 {
-    text-transform: none;
-    margin-bottom: 0;
-    a,
-    a:link,
-    a:visited {
-      color: $color_c2;
-    }
-    a:hover,
-    a:focus {
-      color: $color_c1;
-      background: none;
-    }
-  }
-  img {
-    float:right;
-    margin: 0.5em 0 0.5em 1em;
-    border: 1px solid $color_c3;
-    padding: 3px;
   }
 }
 

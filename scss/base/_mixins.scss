@@ -14,3 +14,13 @@
   position: static;
   left: auto;
 }
+
+@mixin color_link_menu_normal {
+  background: $color-background-lightest;
+  color: $color-text-dark;
+}
+
+@mixin color_link_menu_hover {
+  background-color: $color_background_link_hover;
+  color: $color-link-lightest;
+}

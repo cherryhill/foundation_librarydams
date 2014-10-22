@@ -6280,7 +6280,7 @@ a.th {
 }
 
 .item-list .pager li {
-  padding: 0;
+  padding: 0.25em;
   margin: 0;
   display: inline-block;
 }
@@ -6339,6 +6339,10 @@ button:focus, button:hover, .button:focus, .button:hover {
     margin: 24px 1.84%;
     width: 46%;
   }
+}
+
+.islandora-basic-collection-wrapper {
+  margin-bottom: 24px;
 }
 
 .islandora-basic-collection-display-switch {

@@ -2,8 +2,9 @@
  * Islandora Components
  */
 
+//// collection grid ////
 %islandora-basic-collection-object {
-  border: 1px solid $color_border_light;
+  border: $border_thin_light;
   // one column
   margin: $base-line-height 0;
   width: 100%;
@@ -32,13 +33,24 @@
     }
   }
   .islandora-basic-collection-thumb {
+    background-color: $color_background_light;
     margin: 0; // override default
+    text-align: center;
+    a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      &:focus,
+      &:hover {
+        background-color: transparent;
+      }
+    }
     img {
       border-radius: 0; // override default
     }
   }
   .islandora-basic-collection-caption {
-    border-top: 1px solid $color_border_light;
+    border-top: $border_thin_light;
     line-height: 1.2em;
     padding: 0; // override default
     text-align: center;
@@ -49,4 +61,83 @@
       width: 100%;
     }
   }
+}
+
+//// object display ////
+.islandora-jquery-zoom {
+  background-color: $color_background_light;
+  border: $border_thin_light;
+  height: 480px;
+  max-width: 100%;
+  width: 720px;
+  img {
+    left: 0;
+    margin: auto;
+    max-height: 480px;
+    max-width: 720px;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+.chillco-islandora-large-image-sidebar {
+  margin: $base-line-height;
+}
+.quicktabs-wrapper {
+  .quicktabs-tabs {
+    line-height: normal; // override Foundation default
+    margin: 0; // override Drupal default
+    a {
+      background-color: $color_background_light;
+      color: $color_text_dark;
+      line-height: $base-line-height;
+      padding: 2px 10px;
+      text-transform: uppercase;
+      &:focus,
+      &:hover {
+        background-color: $color_background_link_hover;
+        color: $color_link_lightest;
+      }
+    }
+    .first {
+      border-left: $border_thin_light;
+      margin-left: $base-line-height;
+    }
+    .last {
+      border-right: $border_thin_light;
+    }
+    li {
+      border-top: $border_thin_light;
+      float: left;
+      margin: 10px 0 0 0;
+      padding: 0; // override Quicktabs default
+      &.active {
+        border-left: $border_thin_light;
+        border-right: $border_thin_light;
+        margin-top: 0;
+        padding: 5px 0;
+        a {
+          background-color: transparent;
+          color: $color_quicktab_active;
+          font-weight: bold;
+          padding: 7px 10px;
+        }
+      }
+    }
+    :not(.active) + :not(.active) {
+      border-left: $border_thin_light;
+    }
+  }
+}
+.quicktabs_main {
+  border: $border_thin_light;
+  clear: left;
+  margin-bottom: $base-line-height;
+  padding: $base-line-height;
+}
+.views-field-datastream-xml .field-content {
+  font-family: monospace;
+  font-size: smaller;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }

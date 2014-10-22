@@ -15,12 +15,22 @@
   left: auto;
 }
 
-@mixin color_link_menu_normal {
-  background: $color-background-lightest;
-  color: $color-text-dark;
+@mixin color_background_link_hover {
+  &:focus,
+  &:hover {
+    background-color: $color_background_link_hover;
+    color: $color_link_lightest;    
+  }
 }
 
-@mixin color_link_menu_hover {
-  background-color: $color_background_link_hover;
-  color: $color-link-lightest;
+@mixin color_background_text_normal {
+  background: $color_background_lightest;
+  color: $color_text_dark;
+}
+
+@mixin link_hover {
+  &:focus,
+  &:hover {
+    @include color_background_link_hover;
+  }
 }

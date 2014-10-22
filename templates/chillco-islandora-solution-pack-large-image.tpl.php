@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * This is the template file for the object page for large image
@@ -34,7 +33,6 @@
     <?php endif; ?>
   <div class="chillco-islandora-large-image-sidebar">
     <?php if (!empty($dc_array['dc:description']['value'])): ?>
-      <h2><?php print $dc_array['dc:description']['label']; ?></h2>
       <p><?php print $dc_array['dc:description']['value']; ?></p>
     <?php endif; ?>
   </div>

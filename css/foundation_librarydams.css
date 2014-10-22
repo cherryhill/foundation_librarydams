@@ -6355,7 +6355,17 @@ button:focus, button:hover, .button:focus, .button:hover {
   }
 }
 .islandora-basic-collection-grid .islandora-basic-collection-thumb {
+  background-color: #f1f1f1;
   margin: 0;
+  text-align: center;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb a:focus, .islandora-basic-collection-grid .islandora-basic-collection-thumb a:hover {
+  background-color: transparent;
 }
 .islandora-basic-collection-grid .islandora-basic-collection-thumb img {
   border-radius: 0;
@@ -6371,6 +6381,85 @@ button:focus, button:hover, .button:focus, .button:hover {
   height: 100%;
   padding: 1em;
   width: 100%;
+}
+
+.islandora-jquery-zoom {
+  background-color: #f1f1f1;
+  border: 1px solid #aecbf3;
+  height: 480px;
+  max-width: 100%;
+  width: 720px;
+}
+.islandora-jquery-zoom img {
+  left: 0;
+  margin: auto;
+  max-height: 480px;
+  max-width: 720px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.chillco-islandora-large-image-sidebar {
+  margin: 24px;
+}
+
+.quicktabs-wrapper .quicktabs-tabs {
+  line-height: normal;
+  margin: 0;
+}
+.quicktabs-wrapper .quicktabs-tabs a {
+  background-color: #f1f1f1;
+  color: #333;
+  line-height: 24px;
+  padding: 2px 10px;
+  text-transform: uppercase;
+}
+.quicktabs-wrapper .quicktabs-tabs a:focus, .quicktabs-wrapper .quicktabs-tabs a:hover {
+  background-color: #2259ab;
+  color: #fff;
+}
+.quicktabs-wrapper .quicktabs-tabs .first {
+  border-left: 1px solid #aecbf3;
+  margin-left: 24px;
+}
+.quicktabs-wrapper .quicktabs-tabs .last {
+  border-right: 1px solid #aecbf3;
+}
+.quicktabs-wrapper .quicktabs-tabs li {
+  border-top: 1px solid #aecbf3;
+  float: left;
+  margin: 10px 0 0 0;
+  padding: 0;
+}
+.quicktabs-wrapper .quicktabs-tabs li.active {
+  border-left: 1px solid #aecbf3;
+  border-right: 1px solid #aecbf3;
+  margin-top: 0;
+  padding: 5px 0;
+}
+.quicktabs-wrapper .quicktabs-tabs li.active a {
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+  padding: 7px 10px;
+}
+.quicktabs-wrapper .quicktabs-tabs :not(.active) + :not(.active) {
+  border-left: 1px solid #aecbf3;
+}
+
+.quicktabs_main {
+  border: 1px solid #aecbf3;
+  clear: left;
+  margin-bottom: 24px;
+  padding: 24px;
+}
+
+.views-field-datastream-xml .field-content {
+  font-family: monospace;
+  font-size: smaller;
+  line-height: 1.5;
+  white-space: pre-wrap;
 }
 
 .search-block {
@@ -6433,6 +6522,18 @@ a:link,
 a:visited {
   color: #2259ab;
 }
+a:focus:focus, a:focus:hover, a:hover:focus, a:hover:hover,
+a:link:focus:focus,
+a:link:focus:hover,
+a:link:hover:focus,
+a:link:hover:hover,
+a:visited:focus:focus,
+a:visited:focus:hover,
+a:visited:hover:focus,
+a:visited:hover:hover {
+  background-color: #2259ab;
+  color: #fff;
+}
 a[href^="tel:"],
 a:link[href^="tel:"],
 a:visited[href^="tel:"] {
@@ -6460,19 +6561,15 @@ a:visited.permalink {
   display: none;
 }
 
-a:hover,
-a:focus {
-  color: #fff;
-  background-color: #2259ab;
-}
 a:hover[href^="tel:"],
 a:focus[href^="tel:"] {
-  background-color: none;
+  background: #fff;
   color: #333;
 }
 @media screen and (max-width: 730px) {
-  a:hover[href^="tel:"],
-  a:focus[href^="tel:"] {
+  a:hover[href^="tel:"]:focus, a:hover[href^="tel:"]:hover,
+  a:focus[href^="tel:"]:focus,
+  a:focus[href^="tel:"]:hover {
     background-color: #2259ab;
     color: #fff;
   }
@@ -6511,6 +6608,7 @@ header h2.block-title:after {
 }
 .block-menu-block-1 h2.block-title {
   border-top: 3px solid #2259ab;
+  font-size: 1.2em;
   padding: 0.5em 0 0.1em 0.5em;
   margin-bottom: 0;
 }
@@ -6519,10 +6617,17 @@ header h2.block-title:after {
 .block-menu-block-1 h2.block-title a:visited {
   color: #2259ab;
 }
-.block-menu-block-1 h2.block-title a:hover,
-.block-menu-block-1 h2.block-title a:focus {
-  color: #2259ab;
-  background-color: #fff;
+.block-menu-block-1 h2.block-title a:focus:focus, .block-menu-block-1 h2.block-title a:focus:hover, .block-menu-block-1 h2.block-title a:hover:focus, .block-menu-block-1 h2.block-title a:hover:hover,
+.block-menu-block-1 h2.block-title a:link:focus:focus,
+.block-menu-block-1 h2.block-title a:link:focus:hover,
+.block-menu-block-1 h2.block-title a:link:hover:focus,
+.block-menu-block-1 h2.block-title a:link:hover:hover,
+.block-menu-block-1 h2.block-title a:visited:focus:focus,
+.block-menu-block-1 h2.block-title a:visited:focus:hover,
+.block-menu-block-1 h2.block-title a:visited:hover:focus,
+.block-menu-block-1 h2.block-title a:visited:hover:hover {
+  background-color: #2259ab;
+  color: #fff;
 }
 .l-footer-columns h2.block-title {
   border-top: 3px solid #2259ab;
@@ -6727,11 +6832,29 @@ header a:focus {
   color: #fff;
   padding: 0 5px;
 }
-#accountlinks ul li a:hover,
-#accountlinks ul li a:focus,
-#citylinks ul li a:hover,
-#citylinks ul li a:focus {
+#accountlinks ul li a:focus:focus, #accountlinks ul li a:focus:hover, #accountlinks ul li a:hover:focus, #accountlinks ul li a:hover:hover,
+#accountlinks ul li a:link:focus:focus,
+#accountlinks ul li a:link:focus:hover,
+#accountlinks ul li a:link:hover:focus,
+#accountlinks ul li a:link:hover:hover,
+#accountlinks ul li a:visited:focus:focus,
+#accountlinks ul li a:visited:focus:hover,
+#accountlinks ul li a:visited:hover:focus,
+#accountlinks ul li a:visited:hover:hover,
+#citylinks ul li a:focus:focus,
+#citylinks ul li a:focus:hover,
+#citylinks ul li a:hover:focus,
+#citylinks ul li a:hover:hover,
+#citylinks ul li a:link:focus:focus,
+#citylinks ul li a:link:focus:hover,
+#citylinks ul li a:link:hover:focus,
+#citylinks ul li a:link:hover:hover,
+#citylinks ul li a:visited:focus:focus,
+#citylinks ul li a:visited:focus:hover,
+#citylinks ul li a:visited:hover:focus,
+#citylinks ul li a:visited:hover:hover {
   background-color: #2259ab;
+  color: #fff;
 }
 
 #logo {
@@ -6867,7 +6990,7 @@ header a:focus {
   background: #fff;
   color: #333;
 }
-#topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus {
+#topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:hover, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -6880,9 +7003,23 @@ a:not(.button) {
   font-size: 1.25em;
   font-weight: normal;
 }
-#topbar.contain-to-grid .top-bar-section a.active,
-#topbar.contain-to-grid .top-bar-section a:hover,
-#topbar.contain-to-grid .top-bar-section a:focus {
+#topbar.contain-to-grid .top-bar-section a:focus:focus, #topbar.contain-to-grid .top-bar-section a:focus:hover, #topbar.contain-to-grid .top-bar-section a:hover:focus, #topbar.contain-to-grid .top-bar-section a:hover:hover,
+#topbar.contain-to-grid .top-bar-section a:link:focus:focus,
+#topbar.contain-to-grid .top-bar-section a:link:focus:hover,
+#topbar.contain-to-grid .top-bar-section a:link:hover:focus,
+#topbar.contain-to-grid .top-bar-section a:link:hover:hover,
+#topbar.contain-to-grid .top-bar-section a:visited
+a:not(.button):focus:focus,
+#topbar.contain-to-grid .top-bar-section a:visited
+a:not(.button):focus:hover,
+#topbar.contain-to-grid .top-bar-section a:visited
+a:not(.button):hover:focus,
+#topbar.contain-to-grid .top-bar-section a:visited
+a:not(.button):hover:hover {
+  background-color: #2259ab;
+  color: #fff;
+}
+#topbar.contain-to-grid .top-bar-section a.active:focus, #topbar.contain-to-grid .top-bar-section a.active:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -6895,45 +7032,56 @@ a:not(.button) {
   border-top: 0;
 }
 
-.block-menu-block-1 {
+.block-menu-block {
   margin-bottom: 2em;
 }
-.block-menu-block-1 ul {
-  font-family: "Arvo", "Georgia", georgia, serif;
+.block-menu-block a,
+.block-menu-block a:link,
+.block-menu-block a:visited {
+  color: #333;
+  display: block;
+  padding: 0.75em 0 0.5em 1em;
 }
-.block-menu-block-1 ul li {
+.block-menu-block a:focus:focus, .block-menu-block a:focus:hover, .block-menu-block a:hover:focus, .block-menu-block a:hover:hover,
+.block-menu-block a:link:focus:focus,
+.block-menu-block a:link:focus:hover,
+.block-menu-block a:link:hover:focus,
+.block-menu-block a:link:hover:hover,
+.block-menu-block a:visited:focus:focus,
+.block-menu-block a:visited:focus:hover,
+.block-menu-block a:visited:hover:focus,
+.block-menu-block a:visited:hover:hover {
+  background-color: #2259ab;
+  color: #fff;
+}
+.block-menu-block a.active,
+.block-menu-block a:link.active,
+.block-menu-block a:visited.active {
+  color: #333;
+  font-weight: bold;
+}
+.block-menu-block li {
   border-bottom: 1px solid #aecbf3;
   list-style: none;
   list-style-image: none;
-  padding: 0.75em 0 0.5em 1em;
 }
-.block-menu-block-1 ul li a,
-.block-menu-block-1 ul li a:link,
-.block-menu-block-1 ul li a:visited {
-  display: block;
-  color: #333;
-}
-.block-menu-block-1 ul li a.active,
-.block-menu-block-1 ul li a:link.active,
-.block-menu-block-1 ul li a:visited.active {
-  color: #2259ab;
-}
-.block-menu-block-1 ul li a:hover,
-.block-menu-block-1 ul li a:focus {
-  color: #2259ab;
-  background-color: transparent;
-}
-.block-menu-block-1 ul li li {
-  padding: 0.35em 0.5em 0.35em 0;
+.block-menu-block li li {
   border-bottom: 0;
   line-height: 1em;
   font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 0.9em;
 }
-.block-menu-block-1 ul li li a,
-.block-menu-block-1 ul li li a:link,
-.block-menu-block-1 ul li li a:visited {
+.block-menu-block li li a,
+.block-menu-block li li a:link,
+.block-menu-block li li a:visited {
   color: #2259ab;
+  padding: 0.35em 0.5em 0.35em 2.5em;
+}
+.block-menu-block ul {
+  font-family: "Arvo", "Georgia", georgia, serif;
+}
+.block-menu-block ul .menu {
+  margin: 0;
 }
 
 .sidebar .block:not(.block-menu-block-1) {

@@ -43,7 +43,7 @@ function _foundation_librarydams_process_mods_data(&$variables, $object) {
 
   if ($mods) {
     $mods_data = new SimpleXMLElement($mods);
-dpm($mods_data);
+
     // NAME (title)
     if (!empty($mods_data->titleInfo->title)) {
       $title = $mods_data->titleInfo->title;

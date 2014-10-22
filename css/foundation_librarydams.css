@@ -6276,12 +6276,19 @@ a.th {
 
 .item-list .pager {
   clear: none;
+  margin-left: 0;
 }
 
 .item-list .pager li {
   padding: 0;
   margin: 0;
   display: inline-block;
+}
+
+.item-list .pager .current a,
+.item-list .pager .current a:focus,
+.item-list .pager .current a:hover {
+  background: #2259ab;
 }
 
 h1, h2, h3 {
@@ -6315,8 +6322,55 @@ button, .button {
   border-radius: 2px;
   box-shadow: none;
 }
-button:hover, .button:hover {
+button:focus, button:hover, .button:focus, .button:hover {
   background-color: #2259ab;
+}
+
+/*
+ * Islandora Components
+ */
+.page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object {
+  border: 1px solid #aecbf3;
+  margin: 24px 0;
+  width: 100%;
+}
+@media screen and (min-width: 500px) {
+  .page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object {
+    margin: 24px 1.84%;
+    width: 46%;
+  }
+}
+
+.islandora-basic-collection-display-switch {
+  display: none;
+}
+
+.islandora-basic-collection-grid {
+  margin-bottom: 24px;
+}
+@media screen and (min-width: 730px) {
+  .islandora-basic-collection-grid .islandora-basic-collection-object {
+    margin: 24px 4%;
+    width: 23%;
+  }
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb {
+  margin: 0;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb img {
+  border-radius: 0;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-caption {
+  border-top: 1px solid #aecbf3;
+  line-height: 1.2em;
+  padding: 0;
+  text-align: center;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-caption a {
+  display: inline-block;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
 }
 
 .search-block {
@@ -6355,33 +6409,6 @@ button:hover, .button:hover {
   padding: 0;
   text-transform: uppercase;
   width: 27%;
-}
-
-/*
- * Views
- */
-.view-browse .view-content {
-  -moz-column-count: 2;
-  -webkit-column-count: 2;
-  column-count: 2;
-  margin-bottom: 2em;
-}
-.view-browse .views-row {
-  border: 1px solid #aecbf3;
-  display: inline-block;
-}
-.view-browse .views-field-datastream-image img {
-  width: 350px;
-}
-.view-browse .views-field-label {
-  border-top: 1px solid #aecbf3;
-  text-align: center;
-}
-.view-browse .views-field-label a {
-  display: inline-block;
-  height: 100%;
-  padding: 1em;
-  width: 100%;
 }
 
 /* -----------------------------------------

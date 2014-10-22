@@ -8,6 +8,7 @@ button, .button {
   border: none;
   border-radius: 2px;
   box-shadow: none;
+  &:focus,
   &:hover {
     background-color: $color_button_background;
   }

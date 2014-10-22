@@ -1,0 +1,52 @@
+/*
+ * Islandora Components
+ */
+
+%islandora-basic-collection-object {
+  border: 1px solid $color_border_light;
+  // one column
+  margin: $base-line-height 0;
+  width: 100%;
+  @media screen and (min-width: $tiny-screen) {
+    // two columns
+    margin: $base-line-height 1.84%;
+    width: 46%;
+  }
+}
+.islandora-basic-collection-display-switch {
+  display: none;
+}
+.islandora-basic-collection-grid {
+  margin-bottom: $base-line-height;
+  .page-islandora-object-islandoraroot & {
+    .islandora-basic-collection-object {
+      @extend %islandora-basic-collection-object;
+    }
+  }
+  .islandora-basic-collection-object {
+    @extend %islandora-basic-collection-object;
+    @media screen and (min-width: $small-screen) {
+      // three columns
+      margin: $base-line-height 4%;
+      width: 23%;
+    }
+  }
+  .islandora-basic-collection-thumb {
+    margin: 0; // override default
+    img {
+      border-radius: 0; // override default
+    }
+  }
+  .islandora-basic-collection-caption {
+    border-top: 1px solid $color_border_light;
+    line-height: 1.2em;
+    padding: 0; // override default
+    text-align: center;
+    a {
+      display: inline-block;
+      height: 100%;
+      padding: 1em;
+      width: 100%;
+    }
+  }
+}

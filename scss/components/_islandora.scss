@@ -3,8 +3,7 @@
  */
 
 //// collection grid ////
-%islandora-basic-collection-object {
-  border: $border_thin_light;
+%islandora-grid-display-columns-one-two {
   // one column
   margin: $base-line-height 0;
   width: 100%;
@@ -14,55 +13,71 @@
     width: 46%;
   }
 }
+%islandora-grid-display-columns-three {
+  @media screen and (min-width: $small-screen) {
+    // three columns
+    margin: $base-line-height 4%;
+    width: 23%;
+  }
+}
+%islandora-grid-display-thumb {
+  background-color: $color_background_light;
+  border: $border_thin_light;
+  margin: 0; // override default
+  text-align: center;
+  a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    &:focus,
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  img {
+    border-radius: 0; // override default
+  }
+}
+%islandora-grid-display-caption {
+  text-align: center;
+}
+%islandora-grid-display-margin-bottom {
+  margin-bottom: $base-line-height;  
+}
 .islandora-basic-collection-wrapper {
-  margin-bottom: $base-line-height;
+  @extend %islandora-grid-display-margin-bottom;
 }
 .islandora-basic-collection-display-switch {
   display: none;
 }
 .islandora-basic-collection-grid {
-  margin-bottom: $base-line-height;
   .page-islandora-object-islandoraroot & {
     .islandora-basic-collection-object {
-      @extend %islandora-basic-collection-object;
+      @extend %islandora-grid-display-columns-one-two;
+    }
+    .islandora-basic-collection-caption {
+      border-bottom: $border_thin_light;
+      border-left: $border_thin_light;
+      border-right: $border_thin_light;
+      line-height: 1.2em;
+      padding: 0; // override default
+      a {
+        display: inline-block;
+        height: 100%;
+        padding: 1em;
+        width: 100%;
+      }
     }
   }
   .islandora-basic-collection-object {
-    @extend %islandora-basic-collection-object;
-    @media screen and (min-width: $small-screen) {
-      // three columns
-      margin: $base-line-height 4%;
-      width: 23%;
-    }
+    @extend %islandora-grid-display-columns-one-two;
+    @extend %islandora-grid-display-columns-three;
   }
   .islandora-basic-collection-thumb {
-    background-color: $color_background_light;
-    margin: 0; // override default
-    text-align: center;
-    a {
-      display: inline-block;
-      height: 100%;
-      width: 100%;
-      &:focus,
-      &:hover {
-        background-color: transparent;
-      }
-    }
-    img {
-      border-radius: 0; // override default
-    }
+    @extend %islandora-grid-display-thumb;
   }
   .islandora-basic-collection-caption {
-    border-top: $border_thin_light;
-    line-height: 1.2em;
-    padding: 0; // override default
-    text-align: center;
-    a {
-      display: inline-block;
-      height: 100%;
-      padding: 1em;
-      width: 100%;
-    }
+    @extend %islandora-grid-display-caption;
   }
 }
 

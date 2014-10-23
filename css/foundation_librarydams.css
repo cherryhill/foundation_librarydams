@@ -6329,19 +6329,47 @@ button:focus, button:hover, .button:focus, .button:hover {
 /*
  * Islandora Components
  */
-.page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object {
-  border: 1px solid #aecbf3;
+.page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-solr-search-results .solr-grid-field {
   margin: 24px 0;
   width: 100%;
 }
 @media screen and (min-width: 500px) {
-  .page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object {
+  .page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-solr-search-results .solr-grid-field {
     margin: 24px 1.84%;
     width: 46%;
   }
 }
 
-.islandora-basic-collection-wrapper {
+@media screen and (min-width: 730px) {
+  .islandora-basic-collection-grid .islandora-basic-collection-object, .islandora-solr-search-results .solr-grid-field {
+    margin: 24px 4%;
+    width: 23%;
+  }
+}
+
+.islandora-basic-collection-grid .islandora-basic-collection-thumb, .islandora-solr-search-results .solr-grid-thumb {
+  background-color: #f1f1f1;
+  border: 1px solid #aecbf3;
+  margin: 0;
+  text-align: center;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb a, .islandora-solr-search-results .solr-grid-thumb a {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb a:focus, .islandora-solr-search-results .solr-grid-thumb a:focus, .islandora-basic-collection-grid .islandora-basic-collection-thumb a:hover, .islandora-solr-search-results .solr-grid-thumb a:hover {
+  background-color: transparent;
+}
+.islandora-basic-collection-grid .islandora-basic-collection-thumb img, .islandora-solr-search-results .solr-grid-thumb img {
+  border-radius: 0;
+}
+
+.islandora-basic-collection-grid .islandora-basic-collection-caption, .islandora-solr-search-results .solr-grid-caption {
+  text-align: center;
+}
+
+.islandora-basic-collection-wrapper, .islandora-solr-content {
   margin-bottom: 24px;
 }
 
@@ -6349,38 +6377,14 @@ button:focus, button:hover, .button:focus, .button:hover {
   display: none;
 }
 
-.islandora-basic-collection-grid {
-  margin-bottom: 24px;
-}
-@media screen and (min-width: 730px) {
-  .islandora-basic-collection-grid .islandora-basic-collection-object {
-    margin: 24px 4%;
-    width: 23%;
-  }
-}
-.islandora-basic-collection-grid .islandora-basic-collection-thumb {
-  background-color: #f1f1f1;
-  margin: 0;
-  text-align: center;
-}
-.islandora-basic-collection-grid .islandora-basic-collection-thumb a {
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-}
-.islandora-basic-collection-grid .islandora-basic-collection-thumb a:focus, .islandora-basic-collection-grid .islandora-basic-collection-thumb a:hover {
-  background-color: transparent;
-}
-.islandora-basic-collection-grid .islandora-basic-collection-thumb img {
-  border-radius: 0;
-}
-.islandora-basic-collection-grid .islandora-basic-collection-caption {
-  border-top: 1px solid #aecbf3;
+.page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-caption {
+  border-bottom: 1px solid #aecbf3;
+  border-left: 1px solid #aecbf3;
+  border-right: 1px solid #aecbf3;
   line-height: 1.2em;
   padding: 0;
-  text-align: center;
 }
-.islandora-basic-collection-grid .islandora-basic-collection-caption a {
+.page-islandora-object-islandoraroot .islandora-basic-collection-grid .islandora-basic-collection-caption a {
   display: inline-block;
   height: 100%;
   padding: 1em;
@@ -6466,13 +6470,15 @@ button:focus, button:hover, .button:focus, .button:hover {
   white-space: pre-wrap;
 }
 
+/*
+ * Search
+ */
 .search-block {
   bottom: 0;
   position: absolute;
   right: 0;
 }
 
-#search-block-form,
 #islandora-solr-simple-search-form {
   border: 1px solid #aecbf3;
   border-bottom: 0;
@@ -6481,13 +6487,10 @@ button:focus, button:hover, .button:focus, .button:hover {
   padding: 1em;
 }
 @media all and (max-width: 940px) {
-  #search-block-form .large-5, .large-4 #search-block-form,
-  #islandora-solr-simple-search-form .large-5, .large-4
-  #islandora-solr-simple-search-form {
+  #islandora-solr-simple-search-form .large-5, .large-4 #islandora-solr-simple-search-form {
     margin-top: 1em;
   }
 }
-#search-block-form .form-text,
 #islandora-solr-simple-search-form .form-text {
   background: url(../images/iconsprite.png) -5px -65px no-repeat;
   float: left;
@@ -6495,13 +6498,32 @@ button:focus, button:hover, .button:focus, .button:hover {
   padding-left: 2em;
   width: 68%;
 }
-#search-block-form .form-submit,
 #islandora-solr-simple-search-form .form-submit {
   float: right;
   margin: 0;
   padding: 0;
   text-transform: uppercase;
   width: 27%;
+}
+
+.remove-query, .remove-filter, .block-islandora-solr-basic-facets .islandora-solr-facet-wrapper .islandora-solr-facet a:before {
+  font-size: 120%;
+}
+
+.block-islandora-solr-current-query .islandora-solr-query-wrap .islandora-solr-query-list, .block-islandora-solr-current-query .islandora-solr-filter-wrap .islandora-solr-filter-list, .block-islandora-solr-basic-facets .islandora-solr-facet-wrapper .islandora-solr-facet {
+  list-style: none;
+  padding-left: 0.5em;
+}
+.block-islandora-solr-current-query .islandora-solr-query-wrap .islandora-solr-query-list li, .block-islandora-solr-current-query .islandora-solr-filter-wrap .islandora-solr-filter-list li, .block-islandora-solr-basic-facets .islandora-solr-facet-wrapper .islandora-solr-facet li {
+  margin-left: 0;
+}
+
+.block-islandora-solr-basic-facets .islandora-solr-facet-wrapper .islandora-solr-facet a:before {
+  content: "\2610\0020";
+}
+
+.plusminus {
+  display: none;
 }
 
 /* -----------------------------------------

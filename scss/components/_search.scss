@@ -1,11 +1,13 @@
-// Search Block
+/*
+ * Search
+ */
 
+//// Search Block ////
 .search-block {
   bottom: 0;
   position: absolute;
   right: 0;
 }
-#search-block-form,
 #islandora-solr-simple-search-form {
   border: 1px solid $color_c3;
   border-bottom: 0;
@@ -32,4 +34,66 @@
     text-transform: uppercase;
     width: 27%;
   }
+}
+
+//// Search Results ////
+.islandora-solr-content {
+  @extend %islandora-grid-display-margin-bottom;
+}
+.islandora-solr-search-results {
+  .solr-grid-field {
+    @extend %islandora-grid-display-columns-one-two;
+    @extend %islandora-grid-display-columns-three;
+  }
+  .solr-grid-thumb {
+    @extend %islandora-grid-display-thumb;
+  }
+  .solr-grid-caption {
+    @extend %islandora-grid-display-caption;
+  }  
+}
+
+//// Search Facets ////
+%islandora-facet-checkbox {
+  font-size: 120%;
+}
+%islandora-facet-list {
+  list-style: none;
+  padding-left: 0.5em;
+  li {
+    margin-left: 0;
+  }
+}
+.block-islandora-solr-current-query {
+  .islandora-solr-query-wrap {
+    .islandora-solr-query-list {
+      @extend %islandora-facet-list;
+    }
+  }
+  .islandora-solr-filter-wrap {
+    .islandora-solr-filter-list {
+      @extend %islandora-facet-list;
+    }
+  }
+}
+.remove-query {
+  @extend %islandora-facet-checkbox;
+}
+.remove-filter {
+  @extend %islandora-facet-checkbox;
+}
+.block-islandora-solr-basic-facets {
+  .islandora-solr-facet-wrapper {
+    .islandora-solr-facet {
+      @extend %islandora-facet-list;
+      a:before {
+        @extend %islandora-facet-checkbox;
+        // ballot box followed by space
+        content: "\2610\0020";
+      }
+    }
+  }
+}
+.plusminus {
+  display: none;
 }

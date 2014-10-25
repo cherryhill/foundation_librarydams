@@ -24,7 +24,7 @@
 }
 
 @mixin color_background_text_normal {
-  background: $color_background_lightest;
+  background-color: $color_background_lightest;
   color: $color_text_dark;
 }
 
@@ -32,5 +32,12 @@
   &:focus,
   &:hover {
     @include color_background_link_hover;
+  }
+}
+
+@mixin link_hover_img {
+  &:focus,
+  &:hover {
+    background-color: transparent;
   }
 }

@@ -6551,6 +6551,9 @@ button:focus, button:hover, .button:focus, .button:hover {
   font-weight: bold;
   text-transform: uppercase;
 }
+.views-slideshow-cycle-main-frame-row-item .views-field-field-image a:focus, .views-slideshow-cycle-main-frame-row-item .views-field-field-image a:hover {
+  background-color: transparent;
+}
 
 .views-slideshow-pager-field-item {
   border: 1px solid #aecbf3;
@@ -6622,7 +6625,7 @@ a:visited.permalink {
 
 a:hover[href^="tel:"],
 a:focus[href^="tel:"] {
-  background: #fff;
+  background-color: #fff;
   color: #333;
 }
 @media screen and (max-width: 730px) {
@@ -7046,7 +7049,7 @@ header a:focus {
   }
 }
 #topbar.contain-to-grid .top-bar-section #main-menu .first a.active {
-  background: #fff;
+  background-color: #fff;
   color: #333;
 }
 #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:hover, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:hover {
@@ -7057,7 +7060,7 @@ header a:focus {
 #topbar.contain-to-grid .top-bar-section a:link,
 #topbar.contain-to-grid .top-bar-section a:visited
 a:not(.button) {
-  background: #fff;
+  background-color: #fff;
   color: #333;
   font-size: 1.25em;
   font-weight: normal;

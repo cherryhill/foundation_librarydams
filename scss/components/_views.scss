@@ -24,6 +24,11 @@
     font-weight: bold;
     text-transform: uppercase;
   }
+  .views-field-field-image {
+    a {
+      @include link_hover_img;
+    }
+  }
 }
 .views-slideshow-pager-field-item {
   border: $border_thin_light;

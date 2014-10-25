@@ -1,0 +1,33 @@
+/*
+ * Views
+ */
+
+//// Home Slideshow ////
+.views-slideshow-cycle-main-frame-row-item {
+  position: relative;
+  .views-field-nothing {
+    background-color: rgba(0,0,0,0.33);
+    bottom: 0;
+    color: $color_text_lightest;
+    line-height: 1.25;
+    position: absolute;
+    width: 100%;
+    a {
+      color: $color_link_lightest;
+      display: inline-block;
+      height: 100%;
+      padding: 1em;
+      width: 100%;
+    }
+  }
+  .views-field-islandora-object-label {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.views-slideshow-pager-field-item {
+  border: $border_thin_light;
+  float: left;
+  margin: 1%;
+  width: 18%;
+}

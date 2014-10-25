@@ -6526,6 +6526,39 @@ button:focus, button:hover, .button:focus, .button:hover {
   display: none;
 }
 
+/*
+ * Views
+ */
+.views-slideshow-cycle-main-frame-row-item {
+  position: relative;
+}
+.views-slideshow-cycle-main-frame-row-item .views-field-nothing {
+  background-color: rgba(0, 0, 0, 0.33);
+  bottom: 0;
+  color: #fff;
+  line-height: 1.25;
+  position: absolute;
+  width: 100%;
+}
+.views-slideshow-cycle-main-frame-row-item .views-field-nothing a {
+  color: #fff;
+  display: inline-block;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+}
+.views-slideshow-cycle-main-frame-row-item .views-field-islandora-object-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.views-slideshow-pager-field-item {
+  border: 1px solid #aecbf3;
+  float: left;
+  margin: 1%;
+  width: 18%;
+}
+
 /* -----------------------------------------
    Shared Styles
    ----------------------------------------- */

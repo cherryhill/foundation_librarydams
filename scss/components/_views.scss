@@ -4,6 +4,7 @@
 
 //// Home Slideshow ////
 .views-slideshow-cycle-main-frame-row-item {
+  border: $border_thin_light;
   position: relative;
   .views-field-nothing {
     background-color: rgba(0,0,0,0.33);

@@ -6530,6 +6530,7 @@ button:focus, button:hover, .button:focus, .button:hover {
  * Views
  */
 .views-slideshow-cycle-main-frame-row-item {
+  border: 1px solid #aecbf3;
   position: relative;
 }
 .views-slideshow-cycle-main-frame-row-item .views-field-nothing {
@@ -6584,15 +6585,11 @@ a:link,
 a:visited {
   color: #2259ab;
 }
-a:focus:focus, a:focus:hover, a:hover:focus, a:hover:hover,
-a:link:focus:focus,
-a:link:focus:hover,
-a:link:hover:focus,
-a:link:hover:hover,
-a:visited:focus:focus,
-a:visited:focus:hover,
-a:visited:hover:focus,
-a:visited:hover:hover {
+a:focus, a:hover,
+a:link:focus,
+a:link:hover,
+a:visited:focus,
+a:visited:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -6629,9 +6626,8 @@ a:focus[href^="tel:"] {
   color: #333;
 }
 @media screen and (max-width: 730px) {
-  a:hover[href^="tel:"]:focus, a:hover[href^="tel:"]:hover,
-  a:focus[href^="tel:"]:focus,
-  a:focus[href^="tel:"]:hover {
+  a:hover[href^="tel:"],
+  a:focus[href^="tel:"] {
     background-color: #2259ab;
     color: #fff;
   }
@@ -6679,15 +6675,11 @@ header h2.block-title:after {
 .block-menu-block-1 h2.block-title a:visited {
   color: #2259ab;
 }
-.block-menu-block-1 h2.block-title a:focus:focus, .block-menu-block-1 h2.block-title a:focus:hover, .block-menu-block-1 h2.block-title a:hover:focus, .block-menu-block-1 h2.block-title a:hover:hover,
-.block-menu-block-1 h2.block-title a:link:focus:focus,
-.block-menu-block-1 h2.block-title a:link:focus:hover,
-.block-menu-block-1 h2.block-title a:link:hover:focus,
-.block-menu-block-1 h2.block-title a:link:hover:hover,
-.block-menu-block-1 h2.block-title a:visited:focus:focus,
-.block-menu-block-1 h2.block-title a:visited:focus:hover,
-.block-menu-block-1 h2.block-title a:visited:hover:focus,
-.block-menu-block-1 h2.block-title a:visited:hover:hover {
+.block-menu-block-1 h2.block-title a:focus, .block-menu-block-1 h2.block-title a:hover,
+.block-menu-block-1 h2.block-title a:link:focus,
+.block-menu-block-1 h2.block-title a:link:hover,
+.block-menu-block-1 h2.block-title a:visited:focus,
+.block-menu-block-1 h2.block-title a:visited:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -6894,27 +6886,17 @@ header a:focus {
   color: #fff;
   padding: 0 5px;
 }
-#accountlinks ul li a:focus:focus, #accountlinks ul li a:focus:hover, #accountlinks ul li a:hover:focus, #accountlinks ul li a:hover:hover,
-#accountlinks ul li a:link:focus:focus,
-#accountlinks ul li a:link:focus:hover,
-#accountlinks ul li a:link:hover:focus,
-#accountlinks ul li a:link:hover:hover,
-#accountlinks ul li a:visited:focus:focus,
-#accountlinks ul li a:visited:focus:hover,
-#accountlinks ul li a:visited:hover:focus,
-#accountlinks ul li a:visited:hover:hover,
-#citylinks ul li a:focus:focus,
-#citylinks ul li a:focus:hover,
-#citylinks ul li a:hover:focus,
-#citylinks ul li a:hover:hover,
-#citylinks ul li a:link:focus:focus,
-#citylinks ul li a:link:focus:hover,
-#citylinks ul li a:link:hover:focus,
-#citylinks ul li a:link:hover:hover,
-#citylinks ul li a:visited:focus:focus,
-#citylinks ul li a:visited:focus:hover,
-#citylinks ul li a:visited:hover:focus,
-#citylinks ul li a:visited:hover:hover {
+#accountlinks ul li a:focus, #accountlinks ul li a:hover,
+#accountlinks ul li a:link:focus,
+#accountlinks ul li a:link:hover,
+#accountlinks ul li a:visited:focus,
+#accountlinks ul li a:visited:hover,
+#citylinks ul li a:focus,
+#citylinks ul li a:hover,
+#citylinks ul li a:link:focus,
+#citylinks ul li a:link:hover,
+#citylinks ul li a:visited:focus,
+#citylinks ul li a:visited:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -7052,7 +7034,7 @@ header a:focus {
   background-color: #fff;
   color: #333;
 }
-#topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus:hover, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover:hover {
+#topbar.contain-to-grid .top-bar-section #main-menu .first a.active:focus, #topbar.contain-to-grid .top-bar-section #main-menu .first a.active:hover {
   background-color: #2259ab;
   color: #fff;
 }
@@ -7065,23 +7047,17 @@ a:not(.button) {
   font-size: 1.25em;
   font-weight: normal;
 }
-#topbar.contain-to-grid .top-bar-section a:focus:focus, #topbar.contain-to-grid .top-bar-section a:focus:hover, #topbar.contain-to-grid .top-bar-section a:hover:focus, #topbar.contain-to-grid .top-bar-section a:hover:hover,
-#topbar.contain-to-grid .top-bar-section a:link:focus:focus,
-#topbar.contain-to-grid .top-bar-section a:link:focus:hover,
-#topbar.contain-to-grid .top-bar-section a:link:hover:focus,
-#topbar.contain-to-grid .top-bar-section a:link:hover:hover,
+#topbar.contain-to-grid .top-bar-section a:focus, #topbar.contain-to-grid .top-bar-section a:hover,
+#topbar.contain-to-grid .top-bar-section a:link:focus,
+#topbar.contain-to-grid .top-bar-section a:link:hover,
 #topbar.contain-to-grid .top-bar-section a:visited
-a:not(.button):focus:focus,
+a:not(.button):focus,
 #topbar.contain-to-grid .top-bar-section a:visited
-a:not(.button):focus:hover,
-#topbar.contain-to-grid .top-bar-section a:visited
-a:not(.button):hover:focus,
-#topbar.contain-to-grid .top-bar-section a:visited
-a:not(.button):hover:hover {
+a:not(.button):hover {
   background-color: #2259ab;
   color: #fff;
 }
-#topbar.contain-to-grid .top-bar-section a.active:focus, #topbar.contain-to-grid .top-bar-section a.active:hover {
+#topbar.contain-to-grid .top-bar-section a.active {
   background-color: #2259ab;
   color: #fff;
 }
@@ -7104,15 +7080,11 @@ a:not(.button):hover:hover {
   display: block;
   padding: 0.75em 0 0.5em 1em;
 }
-.block-menu-block a:focus:focus, .block-menu-block a:focus:hover, .block-menu-block a:hover:focus, .block-menu-block a:hover:hover,
-.block-menu-block a:link:focus:focus,
-.block-menu-block a:link:focus:hover,
-.block-menu-block a:link:hover:focus,
-.block-menu-block a:link:hover:hover,
-.block-menu-block a:visited:focus:focus,
-.block-menu-block a:visited:focus:hover,
-.block-menu-block a:visited:hover:focus,
-.block-menu-block a:visited:hover:hover {
+.block-menu-block a:focus, .block-menu-block a:hover,
+.block-menu-block a:link:focus,
+.block-menu-block a:link:hover,
+.block-menu-block a:visited:focus,
+.block-menu-block a:visited:hover {
   background-color: #2259ab;
   color: #fff;
 }

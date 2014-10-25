@@ -15,12 +15,11 @@
   left: auto;
 }
 
+// @TODO: this mixin is not named well
 @mixin color_background_link_hover {
-  &:focus,
-  &:hover {
-    background-color: $color_background_link_hover;
-    color: $color_link_lightest;    
-  }
+  // @TODO: rethink background color variable naming
+  background-color: $color_background_link_hover;
+  color: $color_link_lightest;    
 }
 
 @mixin color_background_text_normal {

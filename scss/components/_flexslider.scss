@@ -1,0 +1,64 @@
+/*
+ * FlexSlider
+ */
+
+//// Home Slideshow ////
+// #flexslider-home-slideshow {
+.flexslider {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  .flex-caption {
+    background-color: rgba(0,0,0,0.33);
+    bottom: 0;
+    color: $color_text_lightest;
+    line-height: 1.25;
+    position: absolute;
+    width: 100%;
+    a {
+      color: $color_link_lightest;
+      display: inline-block;
+      height: 100%;
+      padding: 1em;
+      width: 100%;
+    }
+  }
+  .flex-control-thumbs li {
+    border: $border_thin_light;
+    float: left;
+    margin: 1%;
+    width: 18%;
+  }
+  %flex_direction_nav_elements {
+    // settings for HEAVY [LEFT|RIGHT]-POINTING ANGLE QUOTATION MARK ORNAMENT
+    font-size: 48px;
+    line-height: 0;
+    padding-top: 22px;
+  }
+  .flex-direction-nav a {
+    top: 41%;
+    &.flex-next:before {
+      @extend %flex_direction_nav_elements;
+      content: "\276f"; // ❯ HEAVY RIGHT-POINTING ANGLE QUOTATION MARK ORNAMENT
+      padding-right: 8px;
+    }
+    &.flex-prev:before {
+      @extend %flex_direction_nav_elements;
+      content: "\276e"; // ❮ HEAVY LEFT-POINTING ANGLE QUOTATION MARK ORNAMENT
+      padding-left: 8px;
+    }
+  }
+  .slides > li {
+    border: $border_thin_light;
+    position: relative;
+    &:hover .flex-caption {
+      @include color_background_link_hover;
+    }
+  }
+  .views-field-islandora-object-label {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}

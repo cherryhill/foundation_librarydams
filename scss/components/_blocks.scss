@@ -1,8 +1,99 @@
-// Blocks
-.block {}
-.block-title {}
-.block-content {}
+/*
+ * Blocks
+ */
 
-// Drupal sytem blocks:
-// .block-search {}
-// .block-system {}
+%block-sidebar {
+  background-color: $color_background_light;
+  border: $border-thin-light;
+  margin-bottom: $base-line-height;
+  padding: 0.75em 1em;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+%block-sidebar-content {
+  font-size: 0.9em;  
+}
+%block-sidebar-title {
+  border: 0;
+  color: $color_text_dark;  
+  font-family: $body-font-family;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.about {
+  @extend %block-sidebar;
+  @extend %block-sidebar-content;
+  .block-title {
+    @extend %block-sidebar-title;
+  }
+}
+
+.home-demo-collections {
+  @extend %block-sidebar;
+  font-family: $header-font-family;
+  a {
+    display: block;
+    margin-left: -0.5em;
+    padding-left: 0.5em;
+  }
+  .block-title {
+    border: none;
+    color: $color_text_dark;
+    font-size: 1.2em;
+  }
+  ul {
+    margin-left: 1em;
+  }
+}
+
+.home-welcome {
+  .block-title {
+    border: none;
+    color: $color_text_dark;
+  }
+  a {
+    font-weight: bold;
+  }
+}
+
+.sidebar-main-menu {
+  margin-bottom: 2em;
+  a,
+  a:link,
+  a:visited {
+    color: $color_text_dark;
+    display: block;
+    padding: 0.75em 0 0.5em 1em;
+    @include link_hover;
+    &.active {
+      color: $color_menu_block_active;
+      font-weight: bold;
+    }
+  }
+  li {
+    border-bottom: $border-thin-light;
+    list-style: none;
+    list-style-image: none;
+    li {
+      border-bottom:0;
+      line-height: 1em;
+      font-family: $body-font-family;
+      font-size:0.9em;
+      a,
+      a:link,
+      a:visited {
+        color: $color_c1;
+        padding: 0.35em 0.5em 0.35em 2.5em;
+      }
+    }
+  }
+  ul {
+    font-family: $header-font-family;
+    .menu {
+      margin: 0;
+    }
+  }
+}

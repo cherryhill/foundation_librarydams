@@ -6316,6 +6316,105 @@ h3 {
   /* allows search block to have absolute position */
 }
 
+/*
+ * Blocks
+ */
+.about, .home-demo-collections {
+  background-color: #f1f1f1;
+  border: 1px solid #aecbf3;
+  margin-bottom: 24px;
+  padding: 0.75em 1em;
+}
+.about p:last-of-type, .home-demo-collections p:last-of-type {
+  margin-bottom: 0;
+}
+
+.about {
+  font-size: 0.9em;
+}
+
+.about .block-title {
+  border: 0;
+  color: #333;
+  font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.home-demo-collections {
+  font-family: "Arvo", "Georgia", georgia, serif;
+}
+.home-demo-collections a {
+  display: block;
+  margin-left: -0.5em;
+  padding-left: 0.5em;
+}
+.home-demo-collections .block-title {
+  border: none;
+  color: #333;
+  font-size: 1.2em;
+}
+.home-demo-collections ul {
+  margin-left: 1em;
+}
+
+.home-welcome .block-title {
+  border: none;
+  color: #333;
+}
+.home-welcome a {
+  font-weight: bold;
+}
+
+.sidebar-main-menu {
+  margin-bottom: 2em;
+}
+.sidebar-main-menu a,
+.sidebar-main-menu a:link,
+.sidebar-main-menu a:visited {
+  color: #333;
+  display: block;
+  padding: 0.75em 0 0.5em 1em;
+}
+.sidebar-main-menu a:focus, .sidebar-main-menu a:hover,
+.sidebar-main-menu a:link:focus,
+.sidebar-main-menu a:link:hover,
+.sidebar-main-menu a:visited:focus,
+.sidebar-main-menu a:visited:hover {
+  background-color: #2259ab;
+  color: #fff;
+}
+.sidebar-main-menu a.active,
+.sidebar-main-menu a:link.active,
+.sidebar-main-menu a:visited.active {
+  color: #333;
+  font-weight: bold;
+}
+.sidebar-main-menu li {
+  border-bottom: 1px solid #aecbf3;
+  list-style: none;
+  list-style-image: none;
+}
+.sidebar-main-menu li li {
+  border-bottom: 0;
+  line-height: 1em;
+  font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
+  font-size: 0.9em;
+}
+.sidebar-main-menu li li a,
+.sidebar-main-menu li li a:link,
+.sidebar-main-menu li li a:visited {
+  color: #2259ab;
+  padding: 0.35em 0.5em 0.35em 2.5em;
+}
+.sidebar-main-menu ul {
+  font-family: "Arvo", "Georgia", georgia, serif;
+}
+.sidebar-main-menu ul .menu {
+  margin: 0;
+}
+
 button, .button {
   background-color: #2259ab;
   border: none;
@@ -6471,6 +6570,66 @@ button:focus, button:hover, .button:focus, .button:hover {
 }
 
 /*
+ * FlexSlider
+ */
+.flexslider {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+}
+.flexslider .flex-caption {
+  background-color: rgba(0, 0, 0, 0.33);
+  bottom: 0;
+  color: #fff;
+  line-height: 1.25;
+  position: absolute;
+  width: 100%;
+}
+.flexslider .flex-caption a {
+  color: #fff;
+  display: inline-block;
+  height: 100%;
+  padding: 1em;
+  width: 100%;
+}
+.flexslider .flex-control-thumbs li {
+  border: 1px solid #aecbf3;
+  float: left;
+  margin: 1%;
+  width: 18%;
+}
+.flexslider .flex-direction-nav a.flex-next:before, .flexslider .flex-direction-nav a.flex-prev:before {
+  font-size: 48px;
+  line-height: 0;
+  padding-top: 22px;
+}
+.flexslider .flex-direction-nav a {
+  top: 41%;
+}
+.flexslider .flex-direction-nav a.flex-next:before {
+  content: "\276f";
+  padding-right: 8px;
+}
+.flexslider .flex-direction-nav a.flex-prev:before {
+  content: "\276e";
+  padding-left: 8px;
+}
+.flexslider .slides > li {
+  border: 1px solid #aecbf3;
+  position: relative;
+}
+.flexslider .slides > li:hover .flex-caption {
+  background-color: #2259ab;
+  color: #fff;
+}
+.flexslider .views-field-islandora-object-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*
  * Search
  */
 .search-block {
@@ -6524,43 +6683,6 @@ button:focus, button:hover, .button:focus, .button:hover {
 
 .plusminus {
   display: none;
-}
-
-/*
- * Views
- */
-.views-slideshow-cycle-main-frame-row-item {
-  border: 1px solid #aecbf3;
-  position: relative;
-}
-.views-slideshow-cycle-main-frame-row-item .views-field-nothing {
-  background-color: rgba(0, 0, 0, 0.33);
-  bottom: 0;
-  color: #fff;
-  line-height: 1.25;
-  position: absolute;
-  width: 100%;
-}
-.views-slideshow-cycle-main-frame-row-item .views-field-nothing a {
-  color: #fff;
-  display: inline-block;
-  height: 100%;
-  padding: 1em;
-  width: 100%;
-}
-.views-slideshow-cycle-main-frame-row-item .views-field-islandora-object-label {
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.views-slideshow-cycle-main-frame-row-item .views-field-field-image a:focus, .views-slideshow-cycle-main-frame-row-item .views-field-field-image a:hover {
-  background-color: transparent;
-}
-
-.views-slideshow-pager-field-item {
-  border: 1px solid #aecbf3;
-  float: left;
-  margin: 1%;
-  width: 18%;
 }
 
 /* -----------------------------------------
@@ -7070,70 +7192,6 @@ a:not(.button):hover {
   border-top: 0;
 }
 
-.block-menu-block {
-  margin-bottom: 2em;
-}
-.block-menu-block a,
-.block-menu-block a:link,
-.block-menu-block a:visited {
-  color: #333;
-  display: block;
-  padding: 0.75em 0 0.5em 1em;
-}
-.block-menu-block a:focus, .block-menu-block a:hover,
-.block-menu-block a:link:focus,
-.block-menu-block a:link:hover,
-.block-menu-block a:visited:focus,
-.block-menu-block a:visited:hover {
-  background-color: #2259ab;
-  color: #fff;
-}
-.block-menu-block a.active,
-.block-menu-block a:link.active,
-.block-menu-block a:visited.active {
-  color: #333;
-  font-weight: bold;
-}
-.block-menu-block li {
-  border-bottom: 1px solid #aecbf3;
-  list-style: none;
-  list-style-image: none;
-}
-.block-menu-block li li {
-  border-bottom: 0;
-  line-height: 1em;
-  font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
-  font-size: 0.9em;
-}
-.block-menu-block li li a,
-.block-menu-block li li a:link,
-.block-menu-block li li a:visited {
-  color: #2259ab;
-  padding: 0.35em 0.5em 0.35em 2.5em;
-}
-.block-menu-block ul {
-  font-family: "Arvo", "Georgia", georgia, serif;
-}
-.block-menu-block ul .menu {
-  margin: 0;
-}
-
-.sidebar .block:not(.block-menu-block-1) {
-  border: 1px solid #aecbf3;
-  padding: 0.5em 1em 0.25em;
-  font-size: 0.9em;
-  margin: 0 0 2em 0;
-}
-.sidebar .block:not(.block-menu-block-1) h2.block-title {
-  border: 0;
-  font-size: 1em;
-  font-family: "Source Sans Pro", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #333;
-}
-
 .l-triptych h2.block-title {
   border-bottom: 0;
 }
@@ -7300,95 +7358,4 @@ li .view-mode-full .image {
 .view-mode-full .image .flexslider .flex-caption p {
   margin: 0;
   padding: 0;
-}
-
-.flexslider {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-}
-@media screen and (max-width: 730px) {
-  .flexslider p {
-    margin-bottom: 0.5em;
-  }
-}
-.flexslider h2 {
-  border: 0;
-}
-.flexslider li {
-  margin-left: 0;
-}
-.flexslider .views-field-field-image {
-  width: 70%;
-  margin-right: 4%;
-  float: left;
-  margin-bottom: 2em;
-}
-@media screen and (max-width: 940px) {
-  .flexslider .views-field-field-image {
-    float: none;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 0.5em;
-  }
-}
-.field-name-field-page-slideshow-image .flexslider img {
-  width: 70%;
-  margin-right: 4%;
-  margin-bottom: 2em;
-  float: left;
-}
-@media screen and (max-width: 940px) {
-  .field-name-field-page-slideshow-image .flexslider img {
-    border: 1px solid #aecbf3;
-    width: 100%;
-    margin-right: 0;
-    margin-bottom: 0;
-  }
-}
-.field-name-field-page-slideshow-image .flexslider .flex-caption {
-  margin: 1em 0;
-  font-style: italic;
-}
-@media screen and (max-width: 940px) {
-  .field-name-field-page-slideshow-image .flexslider .flex-caption {
-    border: 1px solid #aecbf3;
-    border-top: 0;
-    width: 100%;
-    margin: 0.5em 0 1em 0;
-    padding: 1em 0.5em 0.5em;
-    text-align: center;
-    font-size: 0.8em;
-    line-height: 1.1em;
-  }
-}
-.flexslider .flex-control-nav {
-  left: 74%;
-  margin-top: -15%;
-  bottom: auto;
-  position: absolute;
-  text-align: none;
-  width: auto;
-}
-@media screen and (max-width: 830px) {
-  .flexslider .flex-control-nav {
-    margin-top: -8%;
-  }
-}
-@media screen and (max-width: 940px) {
-  .flexslider .flex-control-nav {
-    display: none;
-  }
-}
-.flexslider .flex-control-paging li a {
-  background-color: #aecbf3;
-}
-.flexslider .flex-control-paging li a.flex-active {
-  background-color: #2259ab;
-}
-
-.flex-direction-nav a:before {
-  font-size: 26px;
 }

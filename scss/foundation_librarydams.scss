@@ -56,13 +56,14 @@
 @import "layout/footer";
 
 // Components
+@import "components/blocks";
 @import "components/buttons";
 @import "components/islandora";
+@import "components/flexslider";
 // @import "components/type";
 // @import "components/forms";
 // @import "components/foundation-icons";
 @import "components/search";
-@import "components/views";
 
 // Themes
 // @import "theme/button-light";
@@ -502,69 +503,6 @@ header {
 }
 
 //
-// SIDEBAR
-//
-
-.block-menu-block {
-  margin-bottom: 2em;
-  a,
-  a:link,
-  a:visited {
-    color: $color_text_dark;
-    display: block;
-    padding: 0.75em 0 0.5em 1em;
-    @include link_hover;
-    &.active {
-      color: $color_menu_block_active;
-      font-weight: bold;
-    }
-  }
-  li {
-    border-bottom: 1px solid $color_c3;
-    list-style: none;
-    list-style-image: none;
-    li {
-      border-bottom:0;
-      line-height: 1em;
-      font-family: $body-font-family;
-      font-size:0.9em;
-      a,
-      a:link,
-      a:visited {
-        color: $color_c1;
-        padding: 0.35em 0.5em 0.35em 2.5em;
-      }
-    }
-  }
-  ul {
-    font-family: $header-font-family;
-    .menu {
-      margin: 0;
-    }
-  }
-}
-
-.sidebar {
-  .block:not(.block-menu-block-1) {
-    border: 1px solid $color_c3;
-    padding: 0.5em 1em 0.25em;
-    font-size: 0.9em;
-    margin: 0 0 2em 0;
-    h2 {
-      &.block-title {
-        border: 0;
-        font-size: 1em;
-        font-family: $body-font-family;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-weight: bold;
-        color: $color_text_dark;
-      }
-    }
-  }
-}
-
-//
 // TRYPTIC COLUMNS
 //
 
@@ -737,95 +675,4 @@ header {
       }
     }
   }
-}
-
-//
-// FlexSlider Slideshow Styles
-//
-
-.flexslider {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0;
-  p {
-    @media screen and (max-width: $small-screen) {
-      margin-bottom: 0.5em;
-    }
-  }
-  h2 {
-    border: 0;
-  }
-  li {
-    margin-left:0;
-  }
-  .views-field-field-image {
-    width: 70%;
-    margin-right: 4%;
-    float: left;
-    margin-bottom: 2em;
-    @media screen and (max-width: $topbar-breakpoint) {
-      float:none;
-      width:100%;
-      margin-right: 0;
-      margin-bottom:0.5em;
-    }
-  }
-  .field-name-field-page-slideshow-image &{
-    img {
-      width: 70%;
-      margin-right: 4%;
-      margin-bottom: 2em;
-      float:left;
-      @media screen and (max-width: $topbar-breakpoint) {
-        border:1px solid $color_c3;
-        width:100%;
-        margin-right:0;
-        margin-bottom:0;
-      }
-    }
-    .flex-caption {
-      margin: 1em 0;
-      font-style: italic;
-      @media screen and (max-width: $topbar-breakpoint) {
-        border:1px solid $color_c3;
-        border-top:0;
-        width:100%;
-        margin: 0.5em 0 1em 0;
-        padding: 1em 0.5em 0.5em;
-        text-align: center;
-        font-size: 0.8em;
-        line-height: 1.1em;
-      }
-    }
-  }
-  .flex-control-nav {
-    left: 74%;
-    margin-top: -15%;
-    bottom: auto;
-    position: absolute;
-    text-align: none;
-    width:auto;
-    @media screen and (max-width: $smallmedium-screen) {
-      margin-top: -8%;
-    }
-    @media screen and (max-width: $topbar-breakpoint) {
-      display: none;
-    }
-  }
-  .flex-control-paging {
-    li {
-      a {
-        background-color: $color_c3;
-        &.flex-active {
-          background-color: $color_c1;
-        }
-      }
-    }
-  }
-}
-// Update needed with FlexSlider 2.2.2 library.
-.flex-direction-nav a:before {
-  font-size: 26px;
 }

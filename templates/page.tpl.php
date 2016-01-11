@@ -4,44 +4,52 @@
   <!--.l-header region -->
   <header role="banner" class="l-header">
 
-    <!-- City Branding -->
-    <div class="contain-to-grid">
+	  <!-- City Branding -->
+	  <div class="contain-to-grid pre-header">
       <section class="row" id="topmostbranding">
-        <div id="citylinks" class="large-6 small-6 columns">
-          <?php if (!empty($page['citylinks'])): ?>
+        <?php if (!empty($page['citylinks']) && !empty($page['accountlinks'])): ?>
+          <div id="citylinks" class="pre-header-left small-6 columns">
             <?php print render($page['citylinks']); ?>
-          <?php endif; ?>
-        </div>
-        <div id="accountlinks" class="large-6 small-6 columns">
-          <?php if (!empty($page['accountlinks'])): ?>
+          </div>
+          <div id="accountlinks" class="pre-header-right small-6 columns">
             <?php print render($page['accountlinks']); ?>
-          <?php endif; ?>
-        </div>
+          </div>
+        <?php endif; ?>
+        <?php if (!empty($page['citylinks']) && empty($page['accountlinks'])): ?>
+          <div id="citylinks" class="pre-header-left small-12 columns">
+            <?php print render($page['citylinks']); ?>
+          </div>
+        <?php endif; ?>
+        <?php if (empty($page['citylinks']) && !empty($page['accountlinks'])): ?>
+          <div id="accountlinks" class="pre-header-right small-12 columns">
+            <?php print render($page['accountlinks']); ?>
+          </div>
+        <?php endif; ?>
       </section>
-    </div>
-    <!-- End City Branding and Account Links -->
+	  </div>
+	  <!-- End City Branding and Account Links -->
 
     <!-- Title, slogan and menu -->
-    <section id="branding-search" class="row">
+    <section id="branding-search" class="row header-middle">
 
-  <!-- Branding -->
-  <div class="large-8 columns">
-    <?php if ($logo): ?>
-      <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
-    <?php endif; ?>
+	<!-- Branding -->
+    	<div class="brand large-8 columns">
+        <?php if ($logo): ?>
+          <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
+            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        <?php endif; ?>
 
-    <?php if ($site_name): ?>
-      <h1 title="<?php print $site_name; ?>" id="site-name" class="site-name">
-        <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><?php print $site_name; ?></a>
-      </h1>
-    <?php endif; ?>
+        <?php if ($site_name): ?>
+          <h1 title="<?php print $site_name; ?>" id="site-name" class="site-name">
+            <a href="<?php print $front_page; ?>" title="<?php print $site_name; ?>"><?php print $site_name; ?></a>
+          </h1>
+        <?php endif; ?>
 
-    <?php if ($site_slogan): ?>
-      <h2 title="<?php print $site_slogan; ?>" id="site-slogan" class="site-slogan"><?php print $site_slogan; ?></h2>
-    <?php endif; ?>
-  </div>
+        <?php if ($site_slogan): ?>
+          <h2 title="<?php print $site_slogan; ?>" id="site-slogan" class="site-slogan"><?php print $site_slogan; ?></h2>
+        <?php endif; ?>
+    	</div>
     <!-- End Branding -->
 
     <!-- Header area for search box -->
@@ -64,7 +72,7 @@
          <ul class="title-area">
             <li class="name"></li>
             <li class="toggle-topbar menu-icon"><a href="#"><span><?php print $top_bar_menu_text; ?></span></a></li>
-            <li class="search-icon"><a href="/search">Search</a></li>
+            <li class="search-icon"><a href="/library-search">Search</a></li>
           </ul>
           <section class="top-bar-section">
             <?php if ($top_bar_main_menu) :?>
@@ -125,17 +133,19 @@
 
       <a id="main-content"></a>
 
-<!--      <?php if ($breadcrumb): print $breadcrumb; endif; ?>    -->
+<!--      <?php if ($breadcrumb): print $breadcrumb; endif; ?>  -->
 
-      <?php if ($title && !$is_front): ?>
-        <?php print render($title_prefix); ?>
+      <?php print render($title_prefix); ?>
+      <?php if ($title): ?>
         <h1 id="page-title" class="title"><?php print $title; ?></h1>
-        <?php print render($title_suffix); ?>
       <?php endif; ?>
+      <?php print render($title_suffix); ?>
 
       <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-        <?php if (!empty($tabs2)): print render($tabs2); endif; ?>
+        <div class="primary-tabs"><?php print render($tabs); ?></div>
+        <?php if (!empty($tabs2)): ?>
+          <div class="secondary-tabs"><?php print render($tabs2); ?></div>
+        <?php endif; ?>
       <?php endif; ?>
 
       <?php if ($action_links): ?>
@@ -208,14 +218,14 @@
   <?php endif; ?>
 
   <!--.l-footer-->
-    <div class="contain-to-grid">
-  <footer class="l-footer panel row" role="contentinfo">
-    <?php if (!empty($page['footer'])): ?>
-      <div class="footer large-12 columns">
-        <?php print render($page['footer']); ?>
-      </div>
-    <?php endif; ?>
-  </footer>
+    <div class="post-footer contain-to-grid">
+      <footer class="l-footer row" role="contentinfo">
+        <?php if (!empty($page['footer'])): ?>
+          <div class="footer large-12 columns">
+            <?php print render($page['footer']); ?>
+          </div>
+        <?php endif; ?>
+      </footer>
     <div class="contain-to-grid">
   <!--/.footer-->
 

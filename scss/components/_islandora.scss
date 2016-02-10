@@ -42,7 +42,7 @@
   text-align: center;
 }
 %islandora-grid-display-margin-bottom {
-  margin-bottom: $base-line-height;  
+  margin-bottom: $base-line-height;
 }
 .islandora-basic-collection-wrapper {
   @extend %islandora-grid-display-margin-bottom;
@@ -101,7 +101,7 @@
 .chillco-islandora-large-image-sidebar {
   margin: $base-line-height;
 }
-.quicktabs-wrapper {
+#quicktabs-quicktabs_metadata {
   .quicktabs-tabs {
     line-height: normal; // override Foundation default
     margin: 0; // override Drupal default
@@ -150,7 +150,6 @@
 .quicktabs_main {
   border: $border_thin_light;
   clear: left;
-  margin-bottom: $base-line-height;
   padding: $base-line-height;
 }
 .views-field-datastream-xml .field-content {

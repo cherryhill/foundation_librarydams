@@ -13,34 +13,35 @@ $salomie: #ffe382;
 $seashell: #f1f1f1;
 $white: #fff;
 
-$color_c1: $fun_blue;
-$color_c2: $fun_blue;
-$color_c3: $perano;
-$color_c4: #e2f0f9;
+// http://paletton.com/#uid=11l0u0kw0w0jvDaoOy4y4oODajv
+$color_c1: #4C3D00; // $fun_blue
+$color_c2: #ffcd00; // $fun_blue
+$color_c3: #FFD839; // $perano
+$color_c4: #FFE064; // #e2f0f9
 
 // Naming variables modularly is more sustainable.
 // http://webdesign.tutsplus.com/articles/quick-tip-name-your-sass-variables-modularly--webdesign-13364
-$color_background_dark: $mine_shaft;
-$color_background_light: $seashell;
+$color_background_dark: #9B7D00; // $mine_shaft
+$color_background_light: #FFE064; // $seashell
 $color_background_lightest: $white;
-$color_background_link_hover: $fun_blue;
-$color_background_notice: $salomie;
-$color_background_pager_current: $fun_blue;
+$color_background_link_hover: #b59900;
+$color_background_notice: #FFE064; // $salomie
+$color_background_pager_current: #ffcd00;
 
-$color_border_light: $perano;
+$color_border_light: #FFD839; // $perano
 
-$color_button_background: $fun_blue;
+$color_button_background: #b59900;
 
-$color_heading_colored: $fun_blue;
-$color_heading_text: $mine_shaft;
+$color_heading_colored: #4C3D00;
+$color_heading_text: #9B7D00; // $mine_shaft
 
 $color_link_lightest: $white;
 
-$color_menu_block_active: $mine_shaft;
+$color_menu_block_active: #9B7D00; // $mine_shaft
 
-$color_quicktab_active: $mine_shaft;
+$color_quicktab_active: #9B7D00; // $mine_shaft
 
-$color_text_dark: $mine_shaft;
+$color_text_dark: #776000; // $mine_shaft
 $color_text_lightest: $white;
 
 $color_text_shadow_lightest: $white;
